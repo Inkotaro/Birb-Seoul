@@ -1,0 +1,44 @@
+SEOUL CORNER — Low-Poly Korean Neighbourhood Kit
+Asset License (Royalty-Free) — v1.0
+
+Copyright (c) 2026 the SEOUL CORNER author. All rights reserved except as granted below.
+
+By downloading, purchasing or using this asset pack ("the Assets") you agree to these terms.
+(If you obtained the Assets on a marketplace that applies its own standard license — for
+example the Fab Standard License — that marketplace license governs your use instead.)
+
+YOU MAY
+  1. Use the Assets in an unlimited number of personal and commercial projects: video games,
+     apps, VR/AR, films, animations, renders, illustrations, videos, streams, prototypes,
+     architectural/educational visualisations, and advertising for those projects.
+  2. Modify, recolour, re-texture, combine, cut apart and otherwise adapt the Assets.
+  3. Distribute the Assets as an integrated, non-extractable part of your project
+     (e.g. compiled into a game build, rendered into images or video).
+  4. Use the Assets in client work, provided the client is bound by these same terms.
+
+YOU MAY NOT
+  1. Sell, resell, give away, sublicense, share or redistribute the Assets themselves (source
+     files, models, textures, sign artwork) — modified or unmodified, alone or bundled — e.g. as
+     an asset pack, template, model library, mod kit, marketplace item or free download.
+  2. Use the Assets, or renders of them, as items for sale in user-generated-content stores
+     (e.g. selling them as stand-alone Roblox/Minecraft/Second Life items or NFTs).
+  3. Use the Assets to train, fine-tune or evaluate machine-learning / generative-AI models, or
+     include them in datasets for that purpose.
+  4. Claim the Assets as your own original creation, or register them as trademarks.
+
+TRADEMARKS & NAMES
+  All shop, product and brand names in the Assets (e.g. 누리24 / NURI24, 꼬꼬치킨, 엄마분식) are
+  fictional. Any resemblance to real businesses is coincidental. Do not use the Assets in a way
+  that implies endorsement by any real company.
+
+FONTS
+  Hangul/Latin lettering baked into textures was rendered with fonts under the SIL Open Font
+  License 1.1 (Black Han Sans, Noto Sans CJK KR, Pretendard). No font files are included. See
+  CREDITS.txt.
+
+CREDIT
+  Not required, but appreciated: "SEOUL CORNER asset kit".
+
+WARRANTY
+  The Assets are provided "as is", without warranty of any kind. In no event shall the author be
+  liable for any claim, damages or other liability arising from the use of the Assets.

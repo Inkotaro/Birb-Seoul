@@ -11,13 +11,22 @@ config_version=5
 [application]
 
 config/name="Birb-Seoul"
+run/main_scene="uid://d1um84461uopt"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [physics]
 

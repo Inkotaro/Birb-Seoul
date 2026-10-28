@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bmimsfh8ok23l"
+
+[deps]
+
+files=["res://Assets/SeoulCorner/catalog.category.translation", "res://Assets/SeoulCorner/catalog.triangles.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.description.translation"]
+
+source_file="res://Assets/SeoulCorner/catalog.csv"
+dest_files=["res://Assets/SeoulCorner/catalog.category.translation", "res://Assets/SeoulCorner/catalog.triangles.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.size.translation", "res://Assets/SeoulCorner/catalog.description.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

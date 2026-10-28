@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d1um84461uopt"]
+
+[ext_resource type="PackedScene" uid="uid://cs8hhvre27w1t" path="res://Assets/SeoulCorner/GLB/SeoulCorner_Shops.glb" id="1_6laxn"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_k4w1w"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_sxx0l"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_wgyyo"]
+[ext_resource type="Script" uid="uid://bjeydox0yvkmt" path="res://player.gd" id="5_6sjw0"]
+
+[sub_resource type="Sky" id="Sky_6sjw0"]
+
+[sub_resource type="Environment" id="Environment_66fdh"]
+background_mode = 2
+sky = SubResource("Sky_6sjw0")
+glow_enabled = true
+glow_intensity = 0.4
+glow_mix = 0.24
+glow_bloom = 0.65
+glow_blend_mode = 4
+fog_enabled = true
+fog_light_color = Color(1.3837591e-07, 0.14054862, 0.20306882, 1)
+fog_light_energy = 2.12
+fog_sun_scatter = 0.14
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_albedo = Color(1.2995303e-06, 0.41689432, 0.59773153, 1)
+volumetric_fog_anisotropy = -0.4
+
+[sub_resource type="Resource" id="Resource_wgyyo"]
+script = ExtResource("3_wgyyo")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6jwua"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jwua"]
+
+[node name="Seoul1" type="Node3D" unique_id=513372701]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=448960647]
+environment = SubResource("Environment_66fdh")
+
+[node name="SeoulCorner_Shops" parent="." unique_id=1682857917 instance=ExtResource("1_6laxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.789693, 0, 4.5524163)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324801605]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=354957797]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.9284767, 0.3713907, 0, -0.3713907, 0.9284767, 0, 2, 5)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=659332376]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_k4w1w")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=962440866 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 0.9284767, 0.3713907, 0, -0.3713907, 0.9284767, 0, 2, 5)
+top_level = true
+script = ExtResource("2_sxx0l")
+follow_mode = 2
+follow_target = NodePath("../CharacterBody3D")
+look_at_mode = 2
+look_at_target = NodePath("../CharacterBody3D")
+tween_resource = SubResource("Resource_wgyyo")
+follow_offset = Vector3(0, 2, 5)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=154326962]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843603437]
+shape = SubResource("WorldBoundaryShape3D_6jwua")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2086586370]
+script = ExtResource("5_6sjw0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1477999040]
+mesh = SubResource("CapsuleMesh_6jwua")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=891295308]
+shape = SubResource("CapsuleShape3D_6jwua")
