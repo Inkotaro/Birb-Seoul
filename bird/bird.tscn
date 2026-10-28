@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://b3kde4ibfvn3s"]
+
+[ext_resource type="Script" uid="uid://bjeydox0yvkmt" path="res://player.gd" id="1_qlr2y"]
+[ext_resource type="PackedScene" uid="uid://dbuoh3hltasjb" path="res://Assets/LookToTheBirds_FreeSample_AmericanRobin_v1.0/GLB/American_Robin_Mesh.glb" id="2_ot1l3"]
+[ext_resource type="Texture2D" uid="uid://cjseuo4b78x67" path="res://eyes.png" id="3_ot1l3"]
+[ext_resource type="Texture2D" uid="uid://bhxlfr3b67wwx" path="res://dead.svg" id="4_leygl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jwua"]
+radius = 0.08935547
+height = 0.68078613
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ot1l3"]
+animation = &"A_Call_01"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gyfb1"]
+animation = &"A_Fly_01"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qlr2y"]
+animation = &"A_Hop_01"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjgom"]
+animation = &"A_Idle_01"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_leygl"]
+animation = &"A_PeckGround_01"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bv0mt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vacdo"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"hop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t3jd4"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jwrbr"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"Fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4o1e2"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_np2wq"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"Fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cijty"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rjgom"]
+states/Call/node = SubResource("AnimationNodeAnimation_ot1l3")
+states/Call/position = Vector2(208.32028, 157)
+states/Fly/node = SubResource("AnimationNodeAnimation_gyfb1")
+states/Fly/position = Vector2(328.32028, 147)
+states/Hop/node = SubResource("AnimationNodeAnimation_qlr2y")
+states/Hop/position = Vector2(507, 37)
+states/Idle/node = SubResource("AnimationNodeAnimation_rjgom")
+states/Idle/position = Vector2(186, 37)
+states/Peck/node = SubResource("AnimationNodeAnimation_leygl")
+states/Peck/position = Vector2(550.3203, 162)
+states/Start/position = Vector2(-16, 37)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bv0mt"), "Idle", "Hop", SubResource("AnimationNodeStateMachineTransition_vacdo"), "Hop", "Idle", SubResource("AnimationNodeStateMachineTransition_t3jd4"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_jwrbr"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_4o1e2"), "Hop", "Fly", SubResource("AnimationNodeStateMachineTransition_np2wq"), "Fly", "Hop", SubResource("AnimationNodeStateMachineTransition_cijty")]
+graph_offset = Vector2(-411.67972, 0)
+
+[node name="Bird" type="CharacterBody3D" unique_id=679907386]
+script = ExtResource("1_qlr2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1309442929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33064342, 0)
+shape = SubResource("CapsuleShape3D_6jwua")
+
+[node name="Mesh" parent="." unique_id=1310126432 instance=ExtResource("2_ot1l3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0038352981, 0)
+
+[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 682382268) index="0" unique_id=644025212]
+bones/0/rotation = Quaternion(-2.9802326e-08, 1.1920928e-07, -2.5243543e-29, 1)
+bones/1/rotation = Quaternion(-3.5527137e-15, -1.19209275e-07, 1.0097419e-28, 1)
+bones/2/rotation = Quaternion(-0.7665097, 7.656013e-08, -9.1375085e-08, 0.6422329)
+bones/3/rotation = Quaternion(-0.15744843, -1.4620768e-14, -3.753863e-08, 0.9875273)
+bones/4/position = Vector3(0.008247919, 0.036549296, -3.1216324e-10)
+bones/4/rotation = Quaternion(-0.16658589, 0.02784615, -0.04380208, 0.9846599)
+bones/5/position = Vector3(-0.008247918, 0.036549293, -9.583748e-09)
+bones/5/rotation = Quaternion(-0.16658594, -0.027846387, 0.043802034, 0.98465997)
+bones/6/rotation = Quaternion(2.4515793e-07, 0.8960976, 0.4438573, 4.9494616e-07)
+bones/7/rotation = Quaternion(0.2789692, 2.2895341e-07, -2.4165757e-07, 0.9603001)
+bones/8/rotation = Quaternion(0.13322204, 1.18146716e-07, -6.775986e-08, 0.9910863)
+bones/9/rotation = Quaternion(0.04354507, 4.3326315e-14, -1.6957074e-08, 0.99905145)
+bones/11/rotation = Quaternion(0.034576286, 0.25800022, 0.6842112, 0.6812455)
+bones/12/rotation = Quaternion(-0.20880796, 0.14093629, -0.1543149, 0.9553654)
+bones/13/rotation = Quaternion(3.7636728e-08, -3.9758252e-08, 0.12202119, 0.99252754)
+bones/14/rotation = Quaternion(-2.3329422e-08, -2.6765436e-08, -0.092451066, 0.9957172)
+bones/17/position = Vector3(-0.031729843, 0.060818043, 2.0634879e-10)
+bones/17/rotation = Quaternion(-2.589242e-08, 1.242365e-07, 0.7317454, 0.6815781)
+bones/18/position = Vector3(-0.02652957, 0.03133797, -3.37629e-09)
+bones/19/position = Vector3(-0.02022229, 0.0027966248, -6.003027e-09)
+bones/19/rotation = Quaternion(-6.84199e-08, 1.2806358e-07, 0.81709796, 0.57649887)
+bones/20/rotation = Quaternion(0.03457559, -0.25799945, -0.68421125, 0.68124574)
+bones/21/rotation = Quaternion(-0.20880802, -0.14093632, 0.15431492, 0.9553654)
+bones/22/rotation = Quaternion(4.7018275e-08, 8.648863e-08, -0.12202121, 0.9925275)
+bones/23/rotation = Quaternion(-3.404414e-08, 1.8729327e-08, 0.09245106, 0.9957172)
+bones/26/position = Vector3(0.031729843, 0.06081803, 7.475678e-09)
+bones/26/rotation = Quaternion(2.0296152e-08, -1.0152718e-07, -0.7317455, 0.68157804)
+bones/27/position = Vector3(0.026529565, 0.031337965, 7.58056e-09)
+bones/27/rotation = Quaternion(-1.6432338e-08, -1.1807966e-07, -0.7888478, 0.6145886)
+bones/28/position = Vector3(0.020222288, 0.0027966192, 7.315925e-09)
+bones/28/rotation = Quaternion(-3.0193934e-08, -1.182745e-07, -0.8170979, 0.576499)
+bones/29/rotation = Quaternion(0.88625026, 0.21499403, -0.16112694, 0.37732765)
+bones/30/rotation = Quaternion(0.56103534, 0.18431899, 0.15631846, 0.79172623)
+bones/31/rotation = Quaternion(-0.49305406, -0.029528527, -0.0032033245, 0.8694916)
+bones/32/rotation = Quaternion(-0.05734572, 0.04570375, 0.04437019, 0.9963202)
+bones/39/rotation = Quaternion(0.88625026, -0.21499403, 0.16112694, 0.37732765)
+bones/40/rotation = Quaternion(0.56103534, -0.18431899, -0.15631846, 0.79172623)
+bones/41/rotation = Quaternion(-0.49305406, 0.029528523, 0.003203325, 0.8694916)
+bones/42/rotation = Quaternion(-0.057345703, -0.045703724, -0.044370178, 0.9963202)
+bones/49/rotation = Quaternion(-0.7068286, -0.019830944, 0.019830778, 0.7068288)
+bones/51/rotation = Quaternion(-0.7068286, 0.019830773, -0.019830944, 0.7068288)
+
+[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=341158177]
+blend_shapes/Wings_Folded = 1.0
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Armature/Skeleton3D" index="1" unique_id=1522309853]
+transform = Transform3D(-0.9999999, -2.0961011e-13, 3.894141e-07, -1.4316326e-13, 0.9999997, -3.7252903e-07, -3.894144e-07, 5.9604645e-08, -0.99999964, -7.7634305e-15, 0.13943382, 0.020502798)
+bone_name = "Head"
+bone_idx = 9
+
+[node name="GoofyBirb" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=525237515]
+transform = Transform3D(0.9569781, -0.009362971, -0.29000908, 0.10164427, 0.9469659, 0.30483493, 0.2717746, -0.32119808, 0.90717715, 0, 0.015, -0.017)
+pixel_size = 0.0002
+billboard = 1
+texture = ExtResource("3_ot1l3")
+
+[node name="CloseBirb2" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=1533723450]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1.0000002, 0, 0.9659258, 0, 0.25881907, 0.015, 0.009, -0.005)
+visible = false
+pixel_size = 0.00015
+texture = ExtResource("4_leygl")
+
+[node name="CloseBirb" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=1884486653]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1.0000001, 0, -0.9659258, 0, 0.25881907, -0.015, 0.009, -0.005)
+visible = false
+pixel_size = 0.00015
+texture = ExtResource("4_leygl")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2097433364]
+root_node = NodePath("../Mesh")
+tree_root = SubResource("AnimationNodeStateMachine_rjgom")
+anim_player = NodePath("../Mesh/AnimationPlayer")
+parameters/conditions/Fly = false
+parameters/conditions/Idle = false
+parameters/conditions/hop = false
+parameters/conditions/idle = false
+
+[editable path="Mesh"]

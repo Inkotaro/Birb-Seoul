@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://5ltiipbl5o3h"]
+
+[ext_resource type="PackedScene" uid="uid://dbuoh3hltasjb" path="res://Assets/LookToTheBirds_FreeSample_AmericanRobin_v1.0/GLB/American_Robin_Mesh.glb" id="1_w7j8t"]
+
+[node name="Mesh" unique_id=70903522 instance=ExtResource("1_w7j8t")]

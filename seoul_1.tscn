@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_k4w1w"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_sxx0l"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_wgyyo"]
-[ext_resource type="Script" uid="uid://bjeydox0yvkmt" path="res://player.gd" id="5_6sjw0"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_6dpp8"]
+[ext_resource type="PackedScene" uid="uid://b3kde4ibfvn3s" path="res://bird/bird.tscn" id="5_6sjw0"]
+[ext_resource type="Shader" uid="uid://dw7o7y8e2fclf" path="res://shader/monochrome.gdshader" id="7_40i1o"]
 
 [sub_resource type="Sky" id="Sky_6sjw0"]
 
@@ -25,14 +27,28 @@ volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(1.2995303e-06, 0.41689432, 0.59773153, 1)
 volumetric_fog_anisotropy = -0.4
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ood74"]
+shader = ExtResource("7_40i1o")
+shader_parameter/bits_per_channel = 6.0000002375
+shader_parameter/dither_strength = 0.1
+shader_parameter/bloom_threshold = 0.4350000206625
+shader_parameter/bloom_intensity = 1.62000007695
+shader_parameter/pixelation = 1000.0
+shader_parameter/color_relaxation = 0.0
+shader_parameter/relaxation_color = Vector3(1, 1, 1)
+shader_parameter/threshold_r = 0.5
+shader_parameter/threshold_g = 0.5
+shader_parameter/threshold_b = 0.5
+shader_parameter/threshold_color = Vector3(1, 1, 1)
+
 [sub_resource type="Resource" id="Resource_wgyyo"]
 script = ExtResource("3_wgyyo")
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6jwua"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jwua"]
+[sub_resource type="Resource" id="Resource_6sjw0"]
+script = ExtResource("5_6dpp8")
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [node name="Seoul1" type="Node3D" unique_id=513372701]
 
@@ -43,43 +59,66 @@ environment = SubResource("Environment_66fdh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.789693, 0, 4.5524163)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324801605]
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=354957797]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.9284767, 0.3713907, 0, -0.3713907, 0.9284767, 0, 2, 5)
-top_level = true
-
-[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=659332376]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("2_k4w1w")
-metadata/_custom_type_script = "uid://bd046eokvcnu2"
-
-[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=962440866 node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(1, 0, 0, 0, 0.9284767, 0.3713907, 0, -0.3713907, 0.9284767, 0, 2, 5)
-top_level = true
-script = ExtResource("2_sxx0l")
-follow_mode = 2
-follow_target = NodePath("../CharacterBody3D")
-look_at_mode = 2
-look_at_target = NodePath("../CharacterBody3D")
-tween_resource = SubResource("Resource_wgyyo")
-follow_offset = Vector3(0, 2, 5)
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
-metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+light_energy = 0.2
+shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=154326962]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843603437]
 shape = SubResource("WorldBoundaryShape3D_6jwua")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2086586370]
-script = ExtResource("5_6sjw0")
+[node name="Bird" parent="." unique_id=679907386 instance=ExtResource("5_6sjw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3539714)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1477999040]
-mesh = SubResource("CapsuleMesh_6jwua")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=560564619]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=891295308]
-shape = SubResource("CapsuleShape3D_6jwua")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1674628723]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=19344560]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.3539715)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_k4w1w")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=234257764]
+material = SubResource("ShaderMaterial_ood74")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=962440866 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999957, 0, 0, 0, 0.999999, 0, 1, 3.3539715)
+top_level = true
+script = ExtResource("2_sxx0l")
+follow_mode = 2
+follow_target = NodePath("../Bird")
+look_at_mode = 2
+look_at_target = NodePath("../Bird")
+tween_resource = SubResource("Resource_wgyyo")
+camera_3d_resource = SubResource("Resource_6sjw0")
+follow_offset = Vector3(0, 1, 2)
+follow_damping = true
+follow_damping_value = Vector3(0.5, 0.3, 0.5)
+look_at_offset = Vector3(0, 1, 0)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
