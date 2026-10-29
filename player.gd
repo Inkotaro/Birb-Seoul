@@ -4,7 +4,8 @@ extends CharacterBody3D
 @onready var animation_player : AnimationPlayer = $Mesh/AnimationPlayer
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
-@onready var FootstepSound: SFXPlayer
+@onready var FootstepSFX: SFXPlayer = $FootstepSFX
+@onready var FlySFX: SFXPlayer = $FlySFX
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 const LEAN_SPEED = 8.0
@@ -14,6 +15,7 @@ const MAX_DOUBLE_JUMP = 2
 var current_double_jump = 0
 var input_direction : Vector3 = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
+var footstep_cooldown: float = 0
 
 const animations = {
 	"call": ["A_Call_01", "A_Call_02", "A_Call_03"],
@@ -31,9 +33,11 @@ func _physics_process(delta: float) -> void:
 	_player_animation(delta)
 	_player_sounds(delta)
 	
-func _player_sound(delta):
-	if (abs(direction.length()) > 0 and is_on_floor()):
+func _player_sounds(delta):
+	footstep_cooldown += 0.05
+	if (abs(velocity.length()) > 0.5 and is_on_floor() and footstep_cooldown >= 1):
 		FootstepSFX.play_sfx()
+		footstep_cooldown = 0
 
 func _player_movement(delta: float) -> void:
 	if not is_on_floor():
@@ -44,6 +48,8 @@ func _player_movement(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and current_double_jump <= MAX_DOUBLE_JUMP:
 		velocity.y = JUMP_VELOCITY
 		current_double_jump += 1
+		FlySFX.play_sfx()
+		
 		
 	var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	input_direction = (transform.basis * Vector3(input_vector.x, 0, input_vector.y)).normalized()

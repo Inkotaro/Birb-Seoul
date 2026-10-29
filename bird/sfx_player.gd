@@ -1,4 +1,4 @@
-extends AudioStreamPlayer3D
+extends AudioStreamPlayer
 class_name SFXPlayer
 
 @export var sounds: Array[AudioStream] = []
@@ -10,5 +10,5 @@ func play_sfx(from_position: float = 0.0) -> void:
 		return
 	stream = sounds.pick_random()
 	pitch_scale = randf_range(min_pitch, max_pitch)
-	
-	super.play(from_position)
+	print(stream)
+	play(from_position)
