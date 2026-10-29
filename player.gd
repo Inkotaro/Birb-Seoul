@@ -6,8 +6,8 @@ extends CharacterBody3D
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var FootstepSFX: SFXPlayer = $FootstepSFX
 @onready var FlySFX: SFXPlayer = $FlySFX
-const SPEED = 2.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 1.0
+const JUMP_VELOCITY = 2.5
 const LEAN_SPEED = 8.0
 const MAX_LEAN_ANGLE = deg_to_rad(25.0)
 const ROTATION_SPEED = 5
@@ -41,7 +41,7 @@ func _player_sounds(delta):
 
 func _player_movement(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity()/2 * delta
+		velocity += get_gravity()/4 * delta
 	else:
 		current_double_jump = 0
 
@@ -54,8 +54,12 @@ func _player_movement(delta: float) -> void:
 	var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	input_direction = (transform.basis * Vector3(input_vector.x, 0, input_vector.y)).normalized()
 	if input_direction:
-		velocity.x = input_direction.x * SPEED
-		velocity.z = input_direction.z * SPEED
+		if (not is_on_floor()):
+			velocity.x = input_direction.x * SPEED * 2
+			velocity.z = input_direction.z * SPEED * 2
+		else:
+			velocity.x = input_direction.x * SPEED 
+			velocity.z = input_direction.z * SPEED
 		direction = input_direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

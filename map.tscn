@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://buu28t1edi6e" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Satellite_Dish.gltf" id="32_y0s0d"]
 [ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_iwan2"]
 [ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_hac6k"]
+[ext_resource type="PackedScene" uid="uid://ddqlk3mpuf8q7" path="res://Assets/kenney_animated-characters-retro/Model/humanoid.tscn" id="35_te172"]
 
 [node name="Map" type="Node3D" unique_id=359042666]
 
@@ -70,13 +71,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.398, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.320274, -9.536743e-07, -2.9441404)
 
 [node name="SC_Gnd_Road_3x35" parent="Roads" unique_id=1123687659 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.358257, -4.7683716e-07, -0.02982372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.358, 0, 0)
 
 [node name="SC_Gnd_Road_Crosswalk_3x35" parent="Roads" unique_id=1028936769 instance=ExtResource("3_te172")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.245203, -9.536743e-07, -3.0133183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -3)
 
 [node name="SC_Gnd_Road_Crosswalk_3x34" parent="Roads" unique_id=50599301 instance=ExtResource("3_te172")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2043, -4.7683716e-07, -0.031472147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 0)
 
 [node name="SC_Gnd_Road_CenterLine_3x43" parent="Roads" unique_id=2120818227 instance=ExtResource("1_4on3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.541516, 0, 0)
@@ -127,25 +128,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.678447, -1.8119812e-05, -5.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.498634, -1.9073486e-06, -5.934809)
 
 [node name="SC_Gnd_Road_3x36" parent="Roads" unique_id=1078276461 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.405647, -9.536743e-07, -5.976927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -5.977)
 
 [node name="SC_Gnd_Road_3x34" parent="Roads" unique_id=294711854 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.411108, -4.7683716e-07, -2.9884634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -2.988)
 
 [node name="SC_Gnd_Road_3x3_Patched2" parent="Roads" unique_id=75718909 instance=ExtResource("11_e1wd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.828632, 0.022236288, -2.9634037)
 
 [node name="SC_Gnd_Road_3x33" parent="Roads" unique_id=904787032 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.417322, -2.3841858e-07, -0.0021531582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
 [node name="SC_Gnd_Road_3x32" parent="Roads" unique_id=966016279 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.860373, -1.1920929e-07, -0.013364077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.86, 0, 0)
 
 [node name="SC_Gnd_Road_Crosswalk_3x33" parent="Roads" unique_id=236657084 instance=ExtResource("3_te172")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.491629, 0, -2.9849522)
 
 [node name="SC_Gnd_Road_Crosswalk_3x32" parent="Roads" unique_id=1316646587 instance=ExtResource("3_te172")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.47843, 0, -0.001648426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.478, 0, 0)
 
 [node name="SC_Gnd_Sidewalk_3x33" parent="Roads" unique_id=1845381548 instance=ExtResource("5_kpdfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.694986, 0, -3.0240974)
@@ -163,10 +164,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.849014, 4.7683716e-07, -6.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.453011, 2.3841858e-07, -3.025696)
 
 [node name="SC_Gnd_Road_3x40" parent="Roads" unique_id=2128193772 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.094812, -1.9073486e-06, -2.9301372)
+transform = Transform3D(0.99998415, 0.005391208, -0.0016177659, -0.005391522, 0.99998546, -0.00018981936, 0.0016167193, 0.00019853566, 0.9999987, -22, 0, -3)
 
 [node name="SC_Gnd_Road_3x39" parent="Roads" unique_id=1203597532 instance=ExtResource("2_a454a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.079847, -9.536743e-07, -0.05964744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
 
 [node name="SC_Str_TrafficLight_Pedestrian_Red2" parent="Roads" unique_id=1185966066 instance=ExtResource("12_xkcq7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3876, 0.15182894, -3.5171537)
@@ -303,3 +304,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.559, 0, -10.075)
 
 [node name="SC_Util_Wire_Drop_Building2" parent="." unique_id=1821651885 instance=ExtResource("34_hac6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.687413, 0, -9.314975)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1378337598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.386928, 1.6641934, -4.5624514)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2052175061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.332123, 1.6641934, -4.5624514)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1785506907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5988045, 1.3329482, -5.379402)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="Humanoid" parent="." unique_id=1572523513 instance=ExtResource("35_te172")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.134216, 0, -2.454484)
