@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dbuoh3hltasjb" path="res://Assets/LookToTheBirds_FreeSample_AmericanRobin_v1.0/GLB/American_Robin_Mesh.glb" id="2_ot1l3"]
 [ext_resource type="Texture2D" uid="uid://cjseuo4b78x67" path="res://eyes.png" id="3_ot1l3"]
 [ext_resource type="Texture2D" uid="uid://bhxlfr3b67wwx" path="res://dead.svg" id="4_leygl"]
+[ext_resource type="Script" uid="uid://qyh0k4xjp7r4" path="res://bird/sfx_player.gd" id="5_rjgom"]
+[ext_resource type="AudioStream" uid="uid://dj71w7hx6fsnr" path="res://Assets/kenney_impact-sounds/Audio/footstep_carpet_000.ogg" id="6_np2wq"]
+[ext_resource type="AudioStream" uid="uid://bgqomsin4qu3v" path="res://Assets/kenney_impact-sounds/Audio/footstep_carpet_001.ogg" id="7_vacdo"]
+[ext_resource type="AudioStream" uid="uid://scpias5axen7" path="res://Assets/kenney_impact-sounds/Audio/footstep_carpet_002.ogg" id="8_cijty"]
+[ext_resource type="AudioStream" uid="uid://ba0uq7018ysqk" path="res://Assets/kenney_impact-sounds/Audio/footstep_carpet_003.ogg" id="9_v5ial"]
+[ext_resource type="AudioStream" uid="uid://demsdviwt8p18" path="res://Assets/kenney_impact-sounds/Audio/footstep_carpet_004.ogg" id="10_iq6o4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jwua"]
 radius = 0.08935547
@@ -82,19 +88,20 @@ shape = SubResource("CapsuleShape3D_6jwua")
 [node name="Mesh" parent="." unique_id=1310126432 instance=ExtResource("2_ot1l3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0038352981, 0)
 
-[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 682382268) index="0" unique_id=644025212]
+[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 683431602) index="0" unique_id=1666931905]
 bones/0/rotation = Quaternion(-2.9802326e-08, 1.1920928e-07, -2.5243543e-29, 1)
+bones/1/position = Vector3(5.8868967e-09, 0.0424207, -0.024691442)
 bones/1/rotation = Quaternion(-3.5527137e-15, -1.19209275e-07, 1.0097419e-28, 1)
-bones/2/rotation = Quaternion(-0.7665097, 7.656013e-08, -9.1375085e-08, 0.6422329)
-bones/3/rotation = Quaternion(-0.15744843, -1.4620768e-14, -3.753863e-08, 0.9875273)
+bones/2/rotation = Quaternion(-0.76963603, -0.034874834, 0.011521331, 0.63742566)
+bones/3/rotation = Quaternion(-0.23062852, 0.0011726418, -0.0013601391, 0.9730402)
 bones/4/position = Vector3(0.008247919, 0.036549296, -3.1216324e-10)
-bones/4/rotation = Quaternion(-0.16658589, 0.02784615, -0.04380208, 0.9846599)
+bones/4/rotation = Quaternion(-0.24146672, 0.0210631, -0.10080281, 0.9649296)
 bones/5/position = Vector3(-0.008247918, 0.036549293, -9.583748e-09)
-bones/5/rotation = Quaternion(-0.16658594, -0.027846387, 0.043802034, 0.98465997)
+bones/5/rotation = Quaternion(-0.2413772, -0.013949548, 0.11736807, 0.96320677)
 bones/6/rotation = Quaternion(2.4515793e-07, 0.8960976, 0.4438573, 4.9494616e-07)
 bones/7/rotation = Quaternion(0.2789692, 2.2895341e-07, -2.4165757e-07, 0.9603001)
 bones/8/rotation = Quaternion(0.13322204, 1.18146716e-07, -6.775986e-08, 0.9910863)
-bones/9/rotation = Quaternion(0.04354507, 4.3326315e-14, -1.6957074e-08, 0.99905145)
+bones/9/rotation = Quaternion(-0.11768301, -0.14498565, 0.022138754, 0.9821608)
 bones/11/rotation = Quaternion(0.034576286, 0.25800022, 0.6842112, 0.6812455)
 bones/12/rotation = Quaternion(-0.20880796, 0.14093629, -0.1543149, 0.9553654)
 bones/13/rotation = Quaternion(3.7636728e-08, -3.9758252e-08, 0.12202119, 0.99252754)
@@ -115,21 +122,21 @@ bones/27/rotation = Quaternion(-1.6432338e-08, -1.1807966e-07, -0.7888478, 0.614
 bones/28/position = Vector3(0.020222288, 0.0027966192, 7.315925e-09)
 bones/28/rotation = Quaternion(-3.0193934e-08, -1.182745e-07, -0.8170979, 0.576499)
 bones/29/rotation = Quaternion(0.88625026, 0.21499403, -0.16112694, 0.37732765)
-bones/30/rotation = Quaternion(0.56103534, 0.18431899, 0.15631846, 0.79172623)
-bones/31/rotation = Quaternion(-0.49305406, -0.029528527, -0.0032033245, 0.8694916)
-bones/32/rotation = Quaternion(-0.05734572, 0.04570375, 0.04437019, 0.9963202)
+bones/30/rotation = Quaternion(0.5728814, 0.18661502, 0.15365483, 0.7831807)
+bones/31/rotation = Quaternion(-0.51528853, -0.02908788, -0.00334778, 0.8565165)
+bones/32/rotation = Quaternion(-0.046664048, 0.044786345, 0.04473599, 0.99690294)
 bones/39/rotation = Quaternion(0.88625026, -0.21499403, 0.16112694, 0.37732765)
-bones/40/rotation = Quaternion(0.56103534, -0.18431899, -0.15631846, 0.79172623)
-bones/41/rotation = Quaternion(-0.49305406, 0.029528523, 0.003203325, 0.8694916)
-bones/42/rotation = Quaternion(-0.057345703, -0.045703724, -0.044370178, 0.9963202)
+bones/40/rotation = Quaternion(0.57288694, -0.18661618, -0.15365349, 0.7831766)
+bones/41/rotation = Quaternion(-0.51528865, 0.02908788, 0.00334778, 0.8565165)
+bones/42/rotation = Quaternion(-0.04666404, -0.04478633, -0.04473598, 0.99690294)
 bones/49/rotation = Quaternion(-0.7068286, -0.019830944, 0.019830778, 0.7068288)
 bones/51/rotation = Quaternion(-0.7068286, 0.019830773, -0.019830944, 0.7068288)
 
-[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=341158177]
+[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=1513466814]
 blend_shapes/Wings_Folded = 1.0
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Armature/Skeleton3D" index="1" unique_id=1522309853]
-transform = Transform3D(-0.9999999, -2.0961011e-13, 3.894141e-07, -1.4316326e-13, 0.9999997, -3.7252903e-07, -3.894144e-07, 5.9604645e-08, -0.99999964, -7.7634305e-15, 0.13943382, 0.020502798)
+transform = Transform3D(-0.95697784, 0.009362846, 0.2900094, 0.10164413, 0.94696563, 0.30483449, -0.27177486, 0.32119802, -0.90717673, -7.7634305e-15, 0.13873418, 0.020502798)
 bone_name = "Head"
 bone_idx = 9
 
@@ -159,5 +166,12 @@ parameters/conditions/Fly = false
 parameters/conditions/Idle = false
 parameters/conditions/hop = false
 parameters/conditions/idle = false
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1982700434]
+
+[node name="FootstepSound" type="AudioStreamPlayer3D" parent="." unique_id=539225267]
+autoplay = true
+script = ExtResource("5_rjgom")
+sounds = Array[AudioStream]([ExtResource("6_np2wq"), ExtResource("7_vacdo"), ExtResource("8_cijty"), ExtResource("9_v5ial"), ExtResource("10_iq6o4")])
 
 [editable path="Mesh"]

@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var animation_player : AnimationPlayer = $Mesh/AnimationPlayer
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
-
+@onready var FootstepSound: SFXPlayer
 const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 const LEAN_SPEED = 8.0
@@ -29,7 +29,12 @@ const animations = {
 func _physics_process(delta: float) -> void:
 	_player_movement(delta)
 	_player_animation(delta)
+	_player_sounds(delta)
 	
+func _player_sound(delta):
+	if (abs(direction.length()) > 0 and is_on_floor()):
+		FootstepSFX.play_sfx()
+
 func _player_movement(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity()/2 * delta
