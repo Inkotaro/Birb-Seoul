@@ -29,11 +29,11 @@ const animations = {
 func _physics_process(delta: float) -> void:
 	_player_movement(delta)
 	_player_animation(delta)
-	_player_sounds(delta)
+	#_player_sounds(delta)
 	
-func _player_sound(delta):
-	if (abs(direction.length()) > 0 and is_on_floor()):
-		FootstepSFX.play_sfx()
+#func _player_sound(delta):
+	#if (abs(direction.length()) > 0 and is_on_floor()):
+		#FootstepSFX.play_sfx()
 
 func _player_movement(delta: float) -> void:
 	if not is_on_floor():
