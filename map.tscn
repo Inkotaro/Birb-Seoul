@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://dfsdgypqyloo1"]
+
+[ext_resource type="PackedScene" uid="uid://wffft4gm6gcs" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_CenterLine_3x3.gltf" id="1_4on3e"]
+[ext_resource type="PackedScene" uid="uid://pkch8gp68xjo" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3.gltf" id="2_a454a"]
+[ext_resource type="PackedScene" uid="uid://b1153g202kwou" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_Green_3x3.gltf" id="2_bssq0"]
+[ext_resource type="PackedScene" uid="uid://b0phm350rdtts" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_3x3.gltf" id="3_jk4ss"]
+[ext_resource type="PackedScene" uid="uid://dwpseuyaykx51" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_Crosswalk_3x3.gltf" id="3_te172"]
+[ext_resource type="PackedScene" uid="uid://bvhdpx5bluumi" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_Corner_3x3.gltf" id="4_2kko2"]
+[ext_resource type="PackedScene" uid="uid://wxjlkagm0ghw" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Manhole_Cover.gltf" id="4_r5om4"]
+[ext_resource type="PackedScene" uid="uid://c26o12ldxfy7g" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Drain_Square.gltf" id="5_jky6x"]
+[ext_resource type="PackedScene" uid="uid://bnj0tjdemhv81" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_3x3.gltf" id="5_kpdfo"]
+[ext_resource type="PackedScene" uid="uid://cjbp3oqgte0uf" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Building_Name_Plate_Sowon.gltf" id="6_4sf5t"]
+[ext_resource type="PackedScene" uid="uid://b3516jx6es7d1" path="res://Assets/SeoulCorner/GLTF/AlleyHousehold/SC_Home_Kimchi_Container_Stack.gltf" id="7_3mr0t"]
+[ext_resource type="PackedScene" uid="uid://bql3jrtvsk3k5" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Wall_Brick_Door_Sliding_3m.gltf" id="8_6sq2s"]
+[ext_resource type="PackedScene" uid="uid://capn8ufvlmee7" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Wall_Brick_2m.gltf" id="9_4v3wx"]
+[ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="10_vbtoe"]
+[ext_resource type="PackedScene" uid="uid://dcfpn0dxmsry7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Mirror_Convex_Double.gltf" id="10_y1wlr"]
+[ext_resource type="PackedScene" uid="uid://b88ol4ydcjhew" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3_Patched.gltf" id="11_e1wd7"]
+[ext_resource type="PackedScene" uid="uid://dr7xc042gympj" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Telecom_Cabinet.gltf" id="11_n2jt6"]
+[ext_resource type="PackedScene" uid="uid://xnhvedc66s5o" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Wall_Riser.gltf" id="12_h75vw"]
+[ext_resource type="PackedScene" uid="uid://ckuag41d2ti02" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Pedestrian_Red.gltf" id="12_xkcq7"]
+[ext_resource type="PackedScene" uid="uid://kuspsgc4iix7" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Roof_Railing_3m.gltf" id="13_7vxqa"]
+[ext_resource type="PackedScene" uid="uid://c2n64erbyei64" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Vehicle_Red.gltf" id="13_8uufd"]
+[ext_resource type="PackedScene" uid="uid://c3crjeoraa0pp" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Roof_Railing_Corner.gltf" id="14_qw8h8"]
+[ext_resource type="PackedScene" uid="uid://ouhqu5o8by7i" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Roof_Slab_3x3_Drain.gltf" id="15_meq34"]
+[ext_resource type="PackedScene" uid="uid://dxhnoo10s2g4q" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Laundry.gltf" id="16_yy28u"]
+[ext_resource type="PackedScene" uid="uid://dg7d7cbwhpvhn" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Karaoke.gltf" id="17_a454a"]
+[ext_resource type="PackedScene" uid="uid://criv7ak1lky85" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Hardware.gltf" id="18_te172"]
+[ext_resource type="PackedScene" uid="uid://fhvjgel8j8wh" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Water_Tank_Rooftop.gltf" id="24_1xagg"]
+[ext_resource type="PackedScene" uid="uid://bkc0fih3ykan0" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Streetlamp_Wall.gltf" id="25_urahp"]
+[ext_resource type="PackedScene" uid="uid://lxyshcklur0t" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Wall_Brick_3m.gltf" id="26_cskkv"]
+[ext_resource type="PackedScene" uid="uid://c3o3mp21afhit" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Concrete_Plain.gltf" id="27_028i1"]
+[ext_resource type="PackedScene" uid="uid://0qcxabacsiip" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Span_10m.gltf" id="31_hltbc"]
+[ext_resource type="PackedScene" uid="uid://buu28t1edi6e" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Satellite_Dish.gltf" id="32_y0s0d"]
+[ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_iwan2"]
+[ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_hac6k"]
+
+[node name="Map" type="Node3D" unique_id=359042666]
+
+[node name="Roads" type="Node3D" parent="." unique_id=1141586149]
+
+[node name="SC_Gnd_Road_CenterLine_3x34" parent="Roads" unique_id=535853733 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3979998, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x42" parent="Roads" unique_id=952079511 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.401579, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x41" parent="Roads" unique_id=459600695 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.586268, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x33" parent="Roads" unique_id=1320533971 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.699, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x35" parent="Roads" unique_id=1971740642 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6020002, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x36" parent="Roads" unique_id=1905529199 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6989999, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x37" parent="Roads" unique_id=1952078796 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.602, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x38" parent="Roads" unique_id=1936796551 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.301, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x39" parent="Roads" unique_id=331360520 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.398, 0, 0)
+
+[node name="SC_Gnd_Road_3x38" parent="Roads" unique_id=1329965531 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.320274, -9.536743e-07, -2.9441404)
+
+[node name="SC_Gnd_Road_3x35" parent="Roads" unique_id=1123687659 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.358257, -4.7683716e-07, -0.02982372)
+
+[node name="SC_Gnd_Road_Crosswalk_3x35" parent="Roads" unique_id=1028936769 instance=ExtResource("3_te172")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.245203, -9.536743e-07, -3.0133183)
+
+[node name="SC_Gnd_Road_Crosswalk_3x34" parent="Roads" unique_id=50599301 instance=ExtResource("3_te172")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2043, -4.7683716e-07, -0.031472147)
+
+[node name="SC_Gnd_Road_CenterLine_3x43" parent="Roads" unique_id=2120818227 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.541516, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x40" parent="Roads" unique_id=619771281 instance=ExtResource("1_4on3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.698999, 0, 0)
+
+[node name="SC_Gnd_Sidewalk_Corner_3x33" parent="Roads" unique_id=2021879021 instance=ExtResource("4_2kko2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.438007, -2.3841858e-07, -2.9802997)
+
+[node name="SC_Gnd_Sidewalk_3x35" parent="Roads" unique_id=622683035 instance=ExtResource("5_kpdfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.494351, -2.3841858e-07, -2.9419384)
+
+[node name="SC_Gnd_Alley_Concrete_Green_3x32" parent="Roads" unique_id=1560033904 instance=ExtResource("2_bssq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x32" parent="Roads" unique_id=1853833249 instance=ExtResource("3_jk4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x33" parent="Roads" unique_id=1540497430 instance=ExtResource("3_jk4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x34" parent="Roads" unique_id=513621510 instance=ExtResource("3_jk4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x35" parent="Roads" unique_id=19614320 instance=ExtResource("3_jk4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x36" parent="Roads" unique_id=158431933 instance=ExtResource("3_jk4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -3)
+
+[node name="SC_Util_Manhole_Cover2" parent="Roads" unique_id=750145399 instance=ExtResource("4_r5om4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="SC_Util_Drain_Square2" parent="Roads" unique_id=629463432 instance=ExtResource("5_jky6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6037955, -2.3841858e-07, -3.3392038)
+
+[node name="SC_Str_Streetlight_Road_Double2" parent="Roads" unique_id=668543906 instance=ExtResource("10_vbtoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67956, -9.059906e-06, 0.9502411)
+
+[node name="SC_Gnd_Road_3x3_Patched4" parent="Roads" unique_id=479954980 instance=ExtResource("11_e1wd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.003109, -3.6239624e-05, -6.2925873)
+
+[node name="SC_Gnd_Road_3x3_Patched3" parent="Roads" unique_id=546812530 instance=ExtResource("11_e1wd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.678447, -1.8119812e-05, -5.9104567)
+
+[node name="SC_Gnd_Road_3x37" parent="Roads" unique_id=1793064620 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.498634, -1.9073486e-06, -5.934809)
+
+[node name="SC_Gnd_Road_3x36" parent="Roads" unique_id=1078276461 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.405647, -9.536743e-07, -5.976927)
+
+[node name="SC_Gnd_Road_3x34" parent="Roads" unique_id=294711854 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.411108, -4.7683716e-07, -2.9884634)
+
+[node name="SC_Gnd_Road_3x3_Patched2" parent="Roads" unique_id=75718909 instance=ExtResource("11_e1wd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.828632, 0.022236288, -2.9634037)
+
+[node name="SC_Gnd_Road_3x33" parent="Roads" unique_id=904787032 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.417322, -2.3841858e-07, -0.0021531582)
+
+[node name="SC_Gnd_Road_3x32" parent="Roads" unique_id=966016279 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.860373, -1.1920929e-07, -0.013364077)
+
+[node name="SC_Gnd_Road_Crosswalk_3x33" parent="Roads" unique_id=236657084 instance=ExtResource("3_te172")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.491629, 0, -2.9849522)
+
+[node name="SC_Gnd_Road_Crosswalk_3x32" parent="Roads" unique_id=1316646587 instance=ExtResource("3_te172")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.47843, 0, -0.001648426)
+
+[node name="SC_Gnd_Sidewalk_3x33" parent="Roads" unique_id=1845381548 instance=ExtResource("5_kpdfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.694986, 0, -3.0240974)
+
+[node name="SC_Gnd_Sidewalk_3x34" parent="Roads" unique_id=2042084152 instance=ExtResource("5_kpdfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.589634, 0, -3.0255895)
+
+[node name="SC_Gnd_Sidewalk_Corner_3x32" parent="Roads" unique_id=2037020370 instance=ExtResource("4_2kko2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.845106, 0, -3.0109558)
+
+[node name="SC_Gnd_Sidewalk_3x36" parent="Roads" unique_id=588453927 instance=ExtResource("5_kpdfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.849014, 4.7683716e-07, -6.0089183)
+
+[node name="SC_Gnd_Sidewalk_3x32" parent="Roads" unique_id=664819029 instance=ExtResource("5_kpdfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.453011, 2.3841858e-07, -3.025696)
+
+[node name="SC_Gnd_Road_3x40" parent="Roads" unique_id=2128193772 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.094812, -1.9073486e-06, -2.9301372)
+
+[node name="SC_Gnd_Road_3x39" parent="Roads" unique_id=1203597532 instance=ExtResource("2_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.079847, -9.536743e-07, -0.05964744)
+
+[node name="SC_Str_TrafficLight_Pedestrian_Red2" parent="Roads" unique_id=1185966066 instance=ExtResource("12_xkcq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3876, 0.15182894, -3.5171537)
+
+[node name="SC_Str_TrafficLight_Vehicle_Red2" parent="Roads" unique_id=311093498 instance=ExtResource("13_8uufd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.811346, 0.17035079, -4.5964565)
+
+[node name="Building1" type="Node3D" parent="." unique_id=818529442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="SC_Bld_Villa_Building_Name_Plate_Sowon2" parent="Building1" unique_id=1548765399 instance=ExtResource("6_4sf5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4806131, 2.4602783, -0.013592243)
+
+[node name="SC_Home_Kimchi_Container_Stack2" parent="Building1" unique_id=1228390490 instance=ExtResource("7_3mr0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_Door_Sliding_3m2" parent="Building1" unique_id=132710488 instance=ExtResource("8_6sq2s")]
+
+[node name="SC_Bld_Villa_Wall_Brick_2m2" parent="Building1" unique_id=2121737524 instance=ExtResource("9_4v3wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_2m3" parent="Building1" unique_id=477494838 instance=ExtResource("9_4v3wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="SC_Util_Mirror_Convex_Double2" parent="Building1" unique_id=1254188420 instance=ExtResource("10_y1wlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="SC_Util_Telecom_Cabinet2" parent="Building1" unique_id=1259245549 instance=ExtResource("11_n2jt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.536, 0, 0.108)
+
+[node name="SC_Util_Wire_Wall_Riser2" parent="Building1" unique_id=354288078 instance=ExtResource("12_h75vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.847, 0.6, -0.025)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m4" parent="Building1" unique_id=1868632594 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.499, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m3" parent="Building1" unique_id=1376796584 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.992, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m2" parent="Building1" unique_id=755455766 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.012, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_Corner2" parent="Building1" unique_id=1309952458 instance=ExtResource("14_qw8h8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9090796, 2.7740734, -0.015325546)
+
+[node name="SC_Bld_Villa_Roof_Railing_Corner3" parent="Building1" unique_id=740473838 instance=ExtResource("14_qw8h8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.068052, 2.9509864, 0.0022859573)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain3" parent="Building1" unique_id=1105842071 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.169, 3.184, -0.125)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain4" parent="Building1" unique_id=1475436294 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.831, 3.184, -0.12)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain2" parent="Building1" unique_id=902676450 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08435893, 3.0920033, -0.19901276)
+
+[node name="SC_Util_Water_Tank_Rooftop2" parent="Building1" unique_id=2023595741 instance=ExtResource("24_1xagg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37250996, 3.264725, -1.7015228)
+
+[node name="SC_Util_Streetlamp_Wall2" parent="Building1" unique_id=504958003 instance=ExtResource("25_urahp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3359957, 1.8715311, -0.007256508)
+
+[node name="Building2" type="Node3D" parent="." unique_id=657277842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.974172, 0, -5)
+
+[node name="SC_Bld_Villa_Building_Name_Plate_Sowon2" parent="Building2" unique_id=1577396002 instance=ExtResource("6_4sf5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4806131, 2.4602783, -0.013592243)
+
+[node name="SC_Home_Kimchi_Container_Stack2" parent="Building2" unique_id=1875002080 instance=ExtResource("7_3mr0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_Door_Sliding_3m2" parent="Building2" unique_id=1220535972 instance=ExtResource("8_6sq2s")]
+
+[node name="SC_Bld_Villa_Wall_Brick_2m2" parent="Building2" unique_id=1935305921 instance=ExtResource("9_4v3wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_2m3" parent="Building2" unique_id=1889335292 instance=ExtResource("9_4v3wx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="SC_Util_Mirror_Convex_Double2" parent="Building2" unique_id=207956238 instance=ExtResource("10_y1wlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="SC_Bld_Villa_Wall_Brick_3m2" parent="Building2" unique_id=1646463384 instance=ExtResource("26_cskkv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.145656, 0, -3.026)
+
+[node name="SC_Util_Telecom_Cabinet2" parent="Building2" unique_id=1573809251 instance=ExtResource("11_n2jt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.536, 0, 0.108)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m4" parent="Building2" unique_id=533758003 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1457205, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m3" parent="Building2" unique_id=212538169 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.992, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m2" parent="Building2" unique_id=288733538 instance=ExtResource("13_7vxqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.012, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_Corner2" parent="Building2" unique_id=36925859 instance=ExtResource("14_qw8h8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9090796, 2.7740734, -0.015325546)
+
+[node name="SC_Bld_Villa_Roof_Railing_Corner3" parent="Building2" unique_id=668710440 instance=ExtResource("14_qw8h8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.068052, 2.9509864, 0.0022859573)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain3" parent="Building2" unique_id=1068795418 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1705966, 3.1340897, -0.12440872)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain4" parent="Building2" unique_id=1661957037 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.831, 3.184, -0.12)
+
+[node name="SC_Bld_Villa_Roof_Slab_3x3_Drain2" parent="Building2" unique_id=1010359361 instance=ExtResource("15_meq34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08435893, 3.0920033, -0.19901276)
+
+[node name="SC_Util_Pole_Concrete_Plain2" parent="Building2" unique_id=1230637221 instance=ExtResource("27_028i1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.366, 0, -2.046)
+
+[node name="SC_Shop_Laundry2" parent="." unique_id=653269013 instance=ExtResource("16_yy28u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.758089, 0, -4)
+
+[node name="SC_Shop_Karaoke2" parent="." unique_id=921087526 instance=ExtResource("17_a454a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="SC_Shop_Hardware2" parent="." unique_id=252878915 instance=ExtResource("18_te172")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.117556, 0, -4)
+
+[node name="SC_Util_Wire_Span_10m2" parent="." unique_id=236082496 instance=ExtResource("31_hltbc")]
+transform = Transform3D(0.9573195, 0, -0.28903177, 0, 1, 0, 0.28903177, 0, 0.9573195, 1.7321391, -0.2575612, -10.232256)
+
+[node name="SC_Util_Satellite_Dish2" parent="." unique_id=2013458803 instance=ExtResource("32_y0s0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8554757, 3.334719, -6.137201)
+
+[node name="SC_Util_Pole_Transformer2" parent="." unique_id=957569051 instance=ExtResource("33_iwan2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.559, 0, -10.075)
+
+[node name="SC_Util_Wire_Drop_Building2" parent="." unique_id=1821651885 instance=ExtResource("34_hac6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.687413, 0, -9.314975)
