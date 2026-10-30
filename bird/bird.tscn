@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ufh1sb60dnw8" path="res://Assets/LookToTheBirds_FreeSample_AmericanRobin_v1.0/GLB/American_Robin_Mesh_American_Robin_Tex.png" id="3_cijty"]
 [ext_resource type="Texture2D" uid="uid://cjseuo4b78x67" path="res://eyes.png" id="3_ot1l3"]
 [ext_resource type="Texture2D" uid="uid://bhxlfr3b67wwx" path="res://dead.svg" id="4_leygl"]
+[ext_resource type="Shader" uid="uid://bv0u2yc7kd5oi" path="res://shader/glow_sprite_3d.gdshader" id="4_v5ial"]
 [ext_resource type="Script" uid="uid://qyh0k4xjp7r4" path="res://bird/sfx_player.gd" id="5_rjgom"]
+[ext_resource type="Script" uid="uid://buj72285ttmy5" path="res://bird/bird_eyes.gd" id="6_iq6o4"]
 [ext_resource type="AudioStream" uid="uid://dq81pxrplgue8" path="res://Assets/kenney_impact-sounds/Audio/impactBell_heavy_000.ogg" id="6_np2wq"]
 [ext_resource type="AudioStream" uid="uid://dpxlymir4wf18" path="res://Assets/kenney_impact-sounds/Audio/impactBell_heavy_001.ogg" id="7_vacdo"]
 [ext_resource type="AudioStream" uid="uid://dvhmse460u62m" path="res://Assets/kenney_impact-sounds/Audio/impactBell_heavy_002.ogg" id="8_cijty"]
@@ -53,6 +55,13 @@ blend_shape_mode = 0
 metadata/extras = {
 "targetNames": ["Wings_Folded"]
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq6o4"]
+render_priority = 0
+shader = ExtResource("4_v5ial")
+shader_parameter/texture_albedo = ExtResource("3_ot1l3")
+shader_parameter/glow_intensity = 8.06000033535
+shader_parameter/no_depth = false
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ot1l3"]
 animation = &"A_Call_01"
@@ -127,20 +136,20 @@ shape = SubResource("CapsuleShape3D_6jwua")
 [node name="Mesh" parent="." unique_id=1310126432 instance=ExtResource("2_ot1l3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0038352981, 0)
 
-[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 682382268) index="0" unique_id=644025212]
+[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 683431602) index="0" unique_id=1666931905]
 bones/0/rotation = Quaternion(-2.9802326e-08, 1.1920928e-07, -2.5243543e-29, 1)
-bones/1/position = Vector3(5.8868967e-09, 0.042163428, -0.024691442)
+bones/1/position = Vector3(5.8868967e-09, 0.041263536, -0.024691442)
 bones/1/rotation = Quaternion(-3.5527137e-15, -1.19209275e-07, 1.0097419e-28, 1)
-bones/2/rotation = Quaternion(-0.77482224, -0.035984356, 0.013768144, 0.63100415)
-bones/3/rotation = Quaternion(-0.23064917, 0.0011729747, -0.0013605246, 0.9730354)
+bones/2/rotation = Quaternion(-0.7746543, -0.031539828, 0.01314344, 0.6314612)
+bones/3/rotation = Quaternion(-0.22319038, 0.0010528067, -0.0012211468, 0.9747735)
 bones/4/position = Vector3(0.008247919, 0.036549296, -3.1216324e-10)
-bones/4/rotation = Quaternion(-0.23979113, 0.03535588, -0.043361127, 0.9692111)
+bones/4/rotation = Quaternion(-0.23203242, 0.034669615, -0.042941123, 0.97114116)
 bones/5/position = Vector3(-0.008247918, 0.036549293, -9.583748e-09)
-bones/5/rotation = Quaternion(-0.23951411, -0.033025444, 0.04070272, 0.96947706)
+bones/5/rotation = Quaternion(-0.23198074, -0.03255131, 0.04080861, 0.9713188)
 bones/6/rotation = Quaternion(2.4515793e-07, 0.8960976, 0.4438573, 4.9494616e-07)
 bones/7/rotation = Quaternion(0.2789692, 2.2895341e-07, -2.4165757e-07, 0.9603001)
 bones/8/rotation = Quaternion(0.13322204, 1.18146716e-07, -6.775986e-08, 0.9910863)
-bones/9/rotation = Quaternion(-0.1127685, 0.29700318, -0.040092185, 0.9473464)
+bones/9/rotation = Quaternion(-0.117683, -0.14498565, 0.022138754, 0.98216087)
 bones/11/rotation = Quaternion(0.034576286, 0.25800022, 0.6842112, 0.6812455)
 bones/12/rotation = Quaternion(-0.20880796, 0.14093629, -0.1543149, 0.9553654)
 bones/13/rotation = Quaternion(3.7636728e-08, -3.9758252e-08, 0.12202119, 0.99252754)
@@ -161,32 +170,34 @@ bones/27/rotation = Quaternion(-1.6432338e-08, -1.1807966e-07, -0.7888478, 0.614
 bones/28/position = Vector3(0.020222288, 0.0027966192, 7.315925e-09)
 bones/28/rotation = Quaternion(-3.0193934e-08, -1.182745e-07, -0.8170979, 0.576499)
 bones/29/rotation = Quaternion(0.88625026, 0.21499403, -0.16112694, 0.37732765)
-bones/30/rotation = Quaternion(0.5789603, 0.18779312, 0.15224555, 0.77869135)
-bones/31/rotation = Quaternion(-0.52666676, -0.028852152, -0.0034217048, 0.8495752)
-bones/32/rotation = Quaternion(-0.04114041, 0.044294573, 0.04492449, 0.9971596)
+bones/30/rotation = Quaternion(0.601337, 0.19212154, 0.14681229, 0.7615308)
+bones/31/rotation = Quaternion(-0.56919324, -0.027906235, -0.0036979928, 0.82172173)
+bones/32/rotation = Quaternion(-0.021268869, 0.042419177, 0.045598604, 0.99783224)
 bones/39/rotation = Quaternion(0.88625026, -0.21499403, 0.16112694, 0.37732765)
-bones/40/rotation = Quaternion(0.57896024, -0.1877931, -0.15224552, 0.7786913)
-bones/41/rotation = Quaternion(-0.52666676, 0.028852152, 0.003421703, 0.8495752)
-bones/42/rotation = Quaternion(-0.04114038, -0.044294536, -0.04492448, 0.9971596)
+bones/40/rotation = Quaternion(0.601337, -0.19212154, -0.14681229, 0.7615308)
+bones/41/rotation = Quaternion(-0.56919324, 0.027906235, 0.003697995, 0.82172173)
+bones/42/rotation = Quaternion(-0.021268861, -0.042419165, -0.045598596, 0.99783224)
 bones/49/rotation = Quaternion(-0.7068286, -0.019830944, 0.019830778, 0.7068288)
 bones/51/rotation = Quaternion(-0.7068286, 0.019830773, -0.019830944, 0.7068288)
 
-[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=341158177]
+[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=1513466814]
 mesh = SubResource("ArrayMesh_iq6o4")
 blend_shapes/Wings_Folded = 1.0
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Armature/Skeleton3D" index="1" unique_id=1522309853]
-transform = Transform3D(-0.8203636, -0.008977258, -0.57177156, -0.19058014, 0.9470056, 0.2585709, 0.5391497, 0.3210909, -0.77859974, -7.7634305e-15, 0.1384769, 0.020502798)
+transform = Transform3D(-0.95697784, 0.009362846, 0.29000938, 0.10164411, 0.94696563, 0.30483446, -0.27177483, 0.321198, -0.90717673, -7.7634305e-15, 0.13757701, 0.020502798)
 bone_name = "Head"
 bone_idx = 9
 
 [node name="GoofyBirb" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=525237515]
 transform = Transform3D(0.9569781, -0.009362971, -0.29000908, 0.10164427, 0.9469659, 0.30483493, 0.2717746, -0.32119808, 0.90717715, 0, 0.015, -0.017)
+material_override = SubResource("ShaderMaterial_iq6o4")
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
 pixel_size = 0.0002
 billboard = 1
 shaded = true
 texture = ExtResource("3_ot1l3")
+script = ExtResource("6_iq6o4")
 
 [node name="CloseBirb2" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=1533723450]
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1.0000002, 0, 0.9659258, 0, 0.25881907, 0.015, 0.009, -0.005)

@@ -1,41 +1,42 @@
 [gd_scene format=3 uid="uid://d1um84461uopt"]
 
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_k4w1w"]
-[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_sxx0l"]
-[ext_resource type="Shader" uid="uid://dy13hrf4dtuqe" path="res://shader/chromatic.gdshader" id="3_40i1o"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_wgyyo"]
-[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_6dpp8"]
-[ext_resource type="PackedScene" uid="uid://b3kde4ibfvn3s" path="res://bird/bird.tscn" id="5_6sjw0"]
-[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="7_3ro6u"]
-[ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://map.tscn" id="7_ood74"]
-[ext_resource type="Script" uid="uid://kygy8v8jc5e7" path="res://road_manager.gd" id="8_ood74"]
-[ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_i8fbe"]
-[ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_loxyc"]
+[ext_resource type="PackedScene" uid="uid://b3kde4ibfvn3s" path="res://bird/bird.tscn" id="1_dg77c"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ycdy4"]
+[ext_resource type="Shader" uid="uid://dy13hrf4dtuqe" path="res://shader/chromatic.gdshader" id="3_w48qg"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_vivmo"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_2cqfq"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_yaehf"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="7_074og"]
+[ext_resource type="Script" uid="uid://kygy8v8jc5e7" path="res://road_manager.gd" id="8_cegan"]
+[ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://roads/seoul_1.tscn" id="9_dg77c"]
+[ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_getpj"]
+[ext_resource type="Script" uid="uid://np0mb1pc2ahg" path="res://scripts/utils/environment_tweener.gd" id="11_ryguw"]
+[ext_resource type="Script" uid="uid://btxs5ikhi1llt" path="res://scripts/utils/music_crossfader.gd" id="12_d13ii"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ood74"]
-shader = ExtResource("3_40i1o")
+shader = ExtResource("3_w48qg")
 shader_parameter/strength = 0.01
 shader_parameter/edge_falloff = true
 shader_parameter/distortion_amount = -0.08
 
 [sub_resource type="Resource" id="Resource_wgyyo"]
-script = ExtResource("3_wgyyo")
+script = ExtResource("5_2cqfq")
 
 [sub_resource type="Resource" id="Resource_6sjw0"]
-script = ExtResource("5_6dpp8")
+script = ExtResource("6_yaehf")
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [sub_resource type="Resource" id="Resource_ood74"]
-script = ExtResource("7_3ro6u")
+script = ExtResource("7_074og")
 frequency = 0.05
 positional_noise = true
 metadata/_custom_type_script = "uid://cuffvge5ad4aa"
 
 [sub_resource type="Sky" id="Sky_6sjw0"]
 
-[sub_resource type="Environment" id="Environment_66fdh"]
+[sub_resource type="Environment" id="Environment_dg77c"]
 background_mode = 2
 sky = SubResource("Sky_6sjw0")
 ambient_light_source = 3
@@ -46,6 +47,7 @@ glow_intensity = 0.4
 glow_mix = 0.24
 glow_bloom = 0.65
 glow_blend_mode = 4
+glow_hdr_threshold = 0.5
 fog_enabled = true
 fog_light_color = Color(1.3837591e-07, 0.14054862, 0.20306882, 1)
 fog_light_energy = 2.12
@@ -66,7 +68,7 @@ shadow_enabled = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843603437]
 shape = SubResource("WorldBoundaryShape3D_6jwua")
 
-[node name="Bird" parent="." unique_id=679907386 instance=ExtResource("5_6sjw0")]
+[node name="Bird" parent="." unique_id=679907386 instance=ExtResource("1_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8500977, 0, -1.0009481)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=560564619]
@@ -86,13 +88,13 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
 physics_interpolation_mode = 1
-transform = Transform3D(0.99918836, 0.029167103, -0.027782008, -0.024376152, 0.9869102, 0.15941767, 0.0320681, -0.15861107, 0.9868202, 5.691956, 0.32061952, 0.3587214)
+transform = Transform3D(0.9999752, 0.0060989414, 0.0035123997, -0.0064831385, 0.99245495, 0.12243877, -0.0027391517, -0.122458525, 0.99246985, 5.90627, 0.51535666, 0.46194938)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]
 process_priority = 300
 process_physics_priority = 300
-script = ExtResource("2_k4w1w")
+script = ExtResource("2_ycdy4")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=234257764]
@@ -106,7 +108,7 @@ grow_vertical = 2
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=962440866 node_paths=PackedStringArray("follow_target", "look_at_target")]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9912236, 0.13216358, 0, -0.13216314, 0.9912269, 5.8500977, 0.5, 0.49905193)
 top_level = true
-script = ExtResource("2_sxx0l")
+script = ExtResource("4_vivmo")
 follow_mode = 2
 follow_target = NodePath("../Bird")
 look_at_mode = 2
@@ -115,7 +117,7 @@ tween_resource = SubResource("Resource_wgyyo")
 camera_3d_resource = SubResource("Resource_6sjw0")
 follow_offset = Vector3(0, 0.5, 1.5)
 follow_damping = true
-follow_damping_value = Vector3(1, 1, 1)
+follow_damping_value = Vector3(0.5, 0.5, 0.5)
 look_at_offset = Vector3(0, 0.3, 0)
 noise = SubResource("Resource_ood74")
 align_transform_with_view = Callable()
@@ -123,21 +125,25 @@ align_position_with_view = Callable()
 align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="RoadManager" type="Node3D" parent="." unique_id=1756864741 node_paths=PackedStringArray("player", "pcam")]
-script = ExtResource("8_ood74")
+[node name="RoadManager" type="Node3D" parent="." unique_id=1756864741 node_paths=PackedStringArray("player", "pcam", "environment_tweener", "music_crossfader")]
+script = ExtResource("8_cegan")
 player = NodePath("../Bird")
 pcam = NodePath("../PhantomCamera3D")
-segment_scene = ExtResource("7_ood74")
-fade_distance = 5.0
-static_distance = 2.0
+segment_scene = ExtResource("9_dg77c")
+environment_tweener = NodePath("../EnvironmentTweener")
+music_crossfader = NodePath("../MusicCrossfader")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2011123258]
-environment = SubResource("Environment_66fdh")
+[node name="Node" type="Node" parent="." unique_id=508830826 node_paths=PackedStringArray("road_manager")]
+script = ExtResource("10_getpj")
+road_manager = NodePath("../RoadManager")
 
-[node name="Node" type="Node" parent="." unique_id=508830826]
-script = ExtResource("10_i8fbe")
+[node name="EnvironmentTweener" type="Node" parent="." unique_id=1817485946 node_paths=PackedStringArray("world_environment")]
+script = ExtResource("11_ryguw")
+world_environment = NodePath("../WorldEnvironment")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1843484025]
-stream = ExtResource("11_loxyc")
-pitch_scale = 0.5
-autoplay = true
+[node name="MusicCrossfader" type="Node" parent="." unique_id=1101807855]
+script = ExtResource("12_d13ii")
+default_fade = 10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1109923352]
+environment = SubResource("Environment_dg77c")

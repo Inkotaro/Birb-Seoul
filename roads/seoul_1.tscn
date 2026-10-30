@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="10_vbtoe"]
 [ext_resource type="PackedScene" uid="uid://dcfpn0dxmsry7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Mirror_Convex_Double.gltf" id="10_y1wlr"]
 [ext_resource type="PackedScene" uid="uid://b88ol4ydcjhew" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3_Patched.gltf" id="11_e1wd7"]
+[ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_loxyc"]
 [ext_resource type="PackedScene" uid="uid://dr7xc042gympj" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Telecom_Cabinet.gltf" id="11_n2jt6"]
 [ext_resource type="PackedScene" uid="uid://xnhvedc66s5o" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Wall_Riser.gltf" id="12_h75vw"]
 [ext_resource type="PackedScene" uid="uid://ckuag41d2ti02" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Pedestrian_Red.gltf" id="12_xkcq7"]
@@ -35,6 +36,30 @@
 [ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_iwan2"]
 [ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_hac6k"]
 [ext_resource type="PackedScene" uid="uid://ddqlk3mpuf8q7" path="res://Assets/kenney_animated-characters-retro/Model/humanoid.tscn" id="35_te172"]
+[ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="36_voq42"]
+
+[sub_resource type="Sky" id="Sky_b755q"]
+
+[sub_resource type="Environment" id="Environment_voq42"]
+background_mode = 2
+sky = SubResource("Sky_b755q")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+glow_enabled = true
+glow_intensity = 0.4
+glow_mix = 0.24
+glow_bloom = 0.65
+glow_blend_mode = 4
+glow_hdr_threshold = 0.5
+fog_enabled = true
+fog_light_color = Color(1.3837591e-07, 0.14054862, 0.20306882, 1)
+fog_light_energy = 2.12
+fog_sun_scatter = 0.14
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(0.68551904, 0.19800708, 4.813075e-07, 1)
+volumetric_fog_emission = Color(0.1331723, 0.00022166617, 0.25102642, 1)
 
 [node name="Map" type="Node3D" unique_id=359042666]
 
@@ -328,3 +353,9 @@ shadow_enabled = true
 
 [node name="Humanoid" parent="." unique_id=1572523513 instance=ExtResource("35_te172")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.134216, 0, -2.454484)
+
+[node name="RoadTheme" type="Node" parent="." unique_id=1459147052]
+script = ExtResource("36_voq42")
+environment = SubResource("Environment_voq42")
+music = ExtResource("11_loxyc")
+music_pitch = 0.5

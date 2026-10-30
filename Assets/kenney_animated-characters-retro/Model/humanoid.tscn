@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://c1vnkao4wlymu" path="res://Assets/kenney_animated-characters-retro/Skins/zombieMaleA.png" id="2_0jjnl"]
 [ext_resource type="AnimationLibrary" uid="uid://cl4cgqfr46ej4" path="res://Assets/kenney_animated-characters-retro/Animations/idle.fbx" id="2_s3oyv"]
 [ext_resource type="AnimationLibrary" uid="uid://b8nodw0jluwe4" path="res://Assets/kenney_animated-characters-retro/Animations/jump.fbx" id="3_h17b8"]
+[ext_resource type="Shader" uid="uid://bv0u2yc7kd5oi" path="res://shader/glow_sprite_3d.gdshader" id="3_uct6s"]
 [ext_resource type="AnimationLibrary" uid="uid://c50ad7483re6o" path="res://Assets/kenney_animated-characters-retro/Animations/run.fbx" id="4_0jjnl"]
 [ext_resource type="Texture2D" uid="uid://b4mx6ukg7b4tn" path="res://Doodle.png" id="4_uct6s"]
-[ext_resource type="Texture2D" uid="uid://c3og5wrmp311y" path="res://Square.svg" id="6_5bls6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bls6"]
 albedo_texture = ExtResource("2_0jjnl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpry8"]
+render_priority = 2
+shader = ExtResource("3_uct6s")
+shader_parameter/texture_albedo = ExtResource("4_uct6s")
+shader_parameter/glow_intensity = 10.0
+shader_parameter/no_depth = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsaai"]
 atlas = ExtResource("4_uct6s")
@@ -49,7 +56,7 @@ animations = [{
 
 [node name="Humanoid" unique_id=1572523513 instance=ExtResource("1_3ewn3")]
 
-[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(163857157) index="0" unique_id=852347985]
+[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(1935974405) index="0" unique_id=1602055755]
 bones/0/rotation = Quaternion(-0.42838848, -0.5625685, 0.56256855, 0.42838845)
 bones/1/position = Vector3(0.0007085259, 0.0017990142, -0.0002224042)
 bones/1/rotation = Quaternion(-0.5075123, 0.5082279, -0.49190673, -0.49210116)
@@ -177,7 +184,7 @@ bones/56/position = Vector3(-5.310766e-10, 0.0030125435, -5.552339e-10)
 bones/56/rotation = Quaternion(0.028260345, 0.9539412, -0.2975736, -0.025447812)
 bones/56/scale = Vector3(1.0000001, 1.0000002, 0.9999999)
 
-[node name="characterMedium" parent="Root/Skeleton3D" index="0" unique_id=1335137781]
+[node name="characterMedium" parent="Root/Skeleton3D" index="0" unique_id=693141534]
 surface_material_override/0 = SubResource("StandardMaterial3D_5bls6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Root/Skeleton3D" index="1" unique_id=1702156642]
@@ -185,25 +192,18 @@ transform = Transform3D(1.000004, 1.1920929e-07, -1.4901161e-08, -1.4901161e-08,
 bone_name = "Head"
 bone_idx = 24
 
-[node name="Sprite3D" type="Sprite3D" parent="Root/Skeleton3D/BoneAttachment3D" index="0" unique_id=1719872668]
-transform = Transform3D(0.009999959, -1.1733297e-09, -7.6556886e-11, 1.2918225e-09, 0.009917473, 0.0012820829, -4.675028e-10, -0.0012820826, 0.009917479, 0.00012509794, 0.0055524185, 0.0025564458)
-pixel_size = 0.002
-billboard = 1
-no_depth_test = true
-texture = ExtResource("6_5bls6")
-
-[node name="Sprite3D2" type="AnimatedSprite3D" parent="Root/Skeleton3D/BoneAttachment3D" index="1" unique_id=2082424172]
-transform = Transform3D(0.009999959, -1.1733297e-09, -7.655691e-11, 1.2918223e-09, 0.0099174725, 0.0012820828, -4.6750276e-10, -0.0012820826, 0.009917478, 0.00012509794, 0.0056026336, 0.0028260283)
+[node name="Sprite3D2" type="AnimatedSprite3D" parent="Root/Skeleton3D/BoneAttachment3D" index="0" unique_id=2082424172]
+transform = Transform3D(0.009999959, -1.1733297e-09, -7.655691e-11, 1.2918219e-09, 0.00991747, 0.0012820824, -4.675025e-10, -0.0012820826, 0.009917475, 0.0001250981, 0.004824359, 0.0051716687)
+material_override = SubResource("ShaderMaterial_tpry8")
 cast_shadow = 0
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
-pixel_size = 0.0107402
+pixel_size = 0.015
 billboard = 1
 no_depth_test = true
 texture_filter = 0
+render_priority = 2
 sprite_frames = SubResource("SpriteFrames_e4v4m")
 autoplay = "default"
-frame = 3
-frame_progress = 0.51821864
+speed_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=31416271]
 libraries/idle = ExtResource("2_s3oyv")

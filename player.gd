@@ -55,8 +55,8 @@ func _player_movement(delta: float) -> void:
 	input_direction = (transform.basis * Vector3(input_vector.x, 0, input_vector.y)).normalized()
 	if input_direction:
 		if (not is_on_floor()):
-			velocity.x = input_direction.x * SPEED * 2
-			velocity.z = input_direction.z * SPEED * 2
+			velocity.x = input_direction.x * SPEED * 4
+			velocity.z = input_direction.z * SPEED * 4
 		else:
 			velocity.x = input_direction.x * SPEED 
 			velocity.z = input_direction.z * SPEED
