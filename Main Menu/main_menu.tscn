@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://xssl1qenly68"]
+
+[ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://map.tscn" id="1_nb5b5"]
+[ext_resource type="PackedScene" uid="uid://cjii7jseyx4sk" path="res://Main Menu/seoul_1_static.tscn" id="2_8ketd"]
+[ext_resource type="PackedScene" uid="uid://cnofiqr705uaw" path="res://Main Menu/menu_ui.tscn" id="3_8ketd"]
+
+[node name="MainMenu" type="Node3D" unique_id=1859279964]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=298048181]
+layer = 2
+
+[node name="Ui" parent="CanvasLayer" unique_id=1988345531 instance=ExtResource("3_8ketd")]
+z_index = 1
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 1.0
+
+[node name="Map" parent="." unique_id=359042666 instance=ExtResource("1_nb5b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343858, 0, 1.5261056)
+
+[node name="Seoul1" parent="." unique_id=513372701 instance=ExtResource("2_8ketd")]
+transform = Transform3D(0.9727759, 0, -0.2317479, 0, 1, 0, 0.2317479, 0, 0.9727759, -11.727556, 0.07519734, 0.000415802)

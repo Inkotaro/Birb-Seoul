@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cnofiqr705uaw"]
+
+[ext_resource type="Script" uid="uid://cs803utm0sw4n" path="res://Main Menu/script/change_scene_btn.gd" id="1_irt24"]
+[ext_resource type="PackedScene" uid="uid://7bxc03lgu8n0" path="res://Main Menu/setting_menu.tscn" id="1_uydvx"]
+[ext_resource type="Script" uid="uid://qbng7vk615ie" path="res://Main Menu/script/quit_btn.gd" id="2_p5gyh"]
+[ext_resource type="Script" uid="uid://dyou8qru2dmtr" path="res://Main Menu/script/setting_btn.gd" id="3_uydvx"]
+
+[node name="Ui" type="Control" unique_id=1988345531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1190770652]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 588.0
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=735483235]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398118157]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "NAME OF GAME"
+
+[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=303567516]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Start"
+script = ExtResource("1_irt24")
+target_scene_path = "uid://d1um84461uopt"
+
+[node name="SettingBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=755291195]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Setting"
+script = ExtResource("3_uydvx")
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1617463869]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+script = ExtResource("2_p5gyh")
+
+[node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("1_uydvx")]
+z_index = 1
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SettingBtn" to="MarginContainer/VBoxContainer/SettingBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_quit_btn_pressed"]

@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://cjii7jseyx4sk"]
+
+[ext_resource type="PackedScene" uid="uid://b3kde4ibfvn3s" path="res://bird/bird.tscn" id="1_kp62r"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_wb6nt"]
+[ext_resource type="Shader" uid="uid://dy13hrf4dtuqe" path="res://shader/chromatic.gdshader" id="3_rddmw"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_7nrsp"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_3agqa"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_sv7sp"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="7_qavhe"]
+[ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_w1kt1"]
+[ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_4lk57"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ood74"]
+shader = ExtResource("3_rddmw")
+shader_parameter/strength = 0.01
+shader_parameter/edge_falloff = true
+shader_parameter/distortion_amount = -0.08
+
+[sub_resource type="Resource" id="Resource_wgyyo"]
+script = ExtResource("5_3agqa")
+
+[sub_resource type="Resource" id="Resource_6sjw0"]
+script = ExtResource("6_sv7sp")
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[sub_resource type="Resource" id="Resource_ood74"]
+script = ExtResource("7_qavhe")
+frequency = 0.05
+positional_noise = true
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
+
+[sub_resource type="Sky" id="Sky_6sjw0"]
+
+[sub_resource type="Environment" id="Environment_66fdh"]
+background_mode = 2
+sky = SubResource("Sky_6sjw0")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+glow_enabled = true
+glow_intensity = 0.4
+glow_mix = 0.24
+glow_bloom = 0.65
+glow_blend_mode = 4
+fog_enabled = true
+fog_light_color = Color(1.3837591e-07, 0.14054862, 0.20306882, 1)
+fog_light_energy = 2.12
+fog_sun_scatter = 0.14
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(0.68551904, 0.19800708, 4.813075e-07, 1)
+volumetric_fog_emission = Color(0.1331723, 0.00022166617, 0.25102642, 1)
+
+[node name="Seoul1" type="Node3D" unique_id=513372701]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324801605]
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=154326962]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843603437]
+shape = SubResource("WorldBoundaryShape3D_6jwua")
+
+[node name="Bird" parent="." unique_id=679907386 instance=ExtResource("1_kp62r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.188132, 0, -1.0009481)
+script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=560564619]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1674628723]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=19344560]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
+physics_interpolation_mode = 1
+transform = Transform3D(0.9079719, -0.045987666, 0.41649994, -0.0127740055, 0.9904598, 0.1372086, -0.41883636, -0.12990192, 0.89872223, 5.0632734, 0.41371635, 0.47758436)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_wb6nt")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=234257764]
+material = SubResource("ShaderMaterial_ood74")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=962440866 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.9015138, -0.05164254, 0.42963263, 3.7252519e-09, 0.99282813, 0.11934243, -0.43272647, -0.107588656, 0.89506835, 5.188132, 0.5, 0.49905193)
+top_level = true
+script = ExtResource("4_7nrsp")
+follow_mode = 2
+follow_target = NodePath("../Bird")
+look_at_mode = 2
+look_at_target = NodePath("../Bird")
+tween_resource = SubResource("Resource_wgyyo")
+camera_3d_resource = SubResource("Resource_6sjw0")
+follow_offset = Vector3(0, 0.5, 1.5)
+follow_damping = true
+follow_damping_value = Vector3(1, 1, 1)
+look_at_offset = Vector3(-0.72, 0.3, 0)
+noise = SubResource("Resource_ood74")
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2011123258]
+environment = SubResource("Environment_66fdh")
+
+[node name="Node" type="Node" parent="." unique_id=508830826]
+script = ExtResource("10_w1kt1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1843484025]
+stream = ExtResource("11_4lk57")
+pitch_scale = 0.5
+autoplay = true
