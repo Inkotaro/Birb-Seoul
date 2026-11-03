@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://map.tscn" id="1_nb5b5"]
 [ext_resource type="PackedScene" uid="uid://cjii7jseyx4sk" path="res://Main Menu/seoul_1_static.tscn" id="2_8ketd"]
+[ext_resource type="Script" uid="uid://wfroaw43q8x1" path="res://Main Menu/script/menu_ui.gd" id="2_15lat"]
 [ext_resource type="PackedScene" uid="uid://cnofiqr705uaw" path="res://Main Menu/menu_ui.tscn" id="3_8ketd"]
 
 [node name="MainMenu" type="Node3D" unique_id=1859279964]
@@ -15,6 +16,8 @@ offset_left = 3.0
 offset_top = 1.0
 offset_right = 3.0
 offset_bottom = 1.0
+script = ExtResource("2_15lat")
+duration = 2.0
 
 [node name="Map" parent="." unique_id=359042666 instance=ExtResource("1_nb5b5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343858, 0, 1.5261056)

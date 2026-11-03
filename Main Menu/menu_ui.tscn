@@ -32,7 +32,7 @@ theme_override_constants/separation = 48
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398118157]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "NAME OF GAME"
+text = "BirdSeoul"
 
 [node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=303567516]
 layout_mode = 2

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://kygy8v8jc5e7" path="res://road_manager.gd" id="8_ood74"]
 [ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_i8fbe"]
 [ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_loxyc"]
+[ext_resource type="PackedScene" uid="uid://dhp2v040nefl1" path="res://Main Menu/gameplay_ui.tscn" id="12_ip4hx"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
 
@@ -86,7 +87,7 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
 physics_interpolation_mode = 1
-transform = Transform3D(0.99918836, 0.029167103, -0.027782008, -0.024376152, 0.9869102, 0.15941767, 0.0320681, -0.15861107, 0.9868202, 5.691956, 0.32061952, 0.3587214)
+transform = Transform3D(0.99999344, -0.00075567164, 0.0035373396, 0.00029195088, 0.99160546, 0.12930031, -0.003605354, -0.12929843, 0.9915992, 5.866641, 0.52066976, 0.500723)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]
@@ -141,3 +142,8 @@ script = ExtResource("10_i8fbe")
 stream = ExtResource("11_loxyc")
 pitch_scale = 0.5
 autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1531508964]
+
+[node name="GameplayUi" parent="CanvasLayer2" unique_id=1448178569 instance=ExtResource("12_ip4hx")]
+visible = false
