@@ -56,7 +56,7 @@ animations = [{
 
 [node name="Humanoid" unique_id=1572523513 instance=ExtResource("1_3ewn3")]
 
-[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(1935974405) index="0" unique_id=1602055755]
+[node name="Skeleton3D" parent="Root" parent_id_path=PackedInt32Array(163857157) index="0" unique_id=852347985]
 bones/0/rotation = Quaternion(-0.42838848, -0.5625685, 0.56256855, 0.42838845)
 bones/1/position = Vector3(0.0007085259, 0.0017990142, -0.0002224042)
 bones/1/rotation = Quaternion(-0.5075123, 0.5082279, -0.49190673, -0.49210116)
@@ -184,7 +184,7 @@ bones/56/position = Vector3(-5.310766e-10, 0.0030125435, -5.552339e-10)
 bones/56/rotation = Quaternion(0.028260345, 0.9539412, -0.2975736, -0.025447812)
 bones/56/scale = Vector3(1.0000001, 1.0000002, 0.9999999)
 
-[node name="characterMedium" parent="Root/Skeleton3D" index="0" unique_id=693141534]
+[node name="characterMedium" parent="Root/Skeleton3D" index="0" unique_id=1335137781]
 surface_material_override/0 = SubResource("StandardMaterial3D_5bls6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Root/Skeleton3D" index="1" unique_id=1702156642]
