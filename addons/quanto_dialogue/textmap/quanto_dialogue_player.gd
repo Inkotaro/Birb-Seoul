@@ -28,6 +28,7 @@ var _in_queue := false
 
 
 func _ready() -> void:
+	add_to_group("quanto-dialogue-player")
 	if runner == null:
 		push_error("QuantoDialoguePlayer: assign a DialogueRunner")
 		return
@@ -80,6 +81,7 @@ func play_all() -> bool:
 ## Drops what is still queued. The running timeline finishes normally.
 func clear_queue() -> void:
 	_queue.clear()
+
 
 
 ## Why a queue / play_all() has nothing to play. The usual cause: timelines exist as

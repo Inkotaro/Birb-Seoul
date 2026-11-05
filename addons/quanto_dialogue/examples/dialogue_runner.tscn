@@ -8,7 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://d3qnih7k3mu8e" path="res://addons/quanto_dialogue/sfx/txt_default.ogg" id="6_0m4k1"]
 [ext_resource type="AudioStream" uid="uid://u54g2f754s15" path="res://addons/quanto_dialogue/sfx/txt_finish.ogg" id="7_vbtn4"]
 [ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="8_gbbba"]
-[ext_resource type="Script" uid="uid://dv2ygiig6ylaw" path="res://addons/quanto_dialogue/effects/scale_in_effect.gd" id="9_xcn64"]
+[ext_resource type="Script" uid="uid://fm4ht3af8vgr" path="res://addons/quanto_dialogue/ui/cinematic_bars.gd" id="9_xcn64"]
+[ext_resource type="Script" uid="uid://iryckdwj5qve" path="res://addons/quanto_dialogue/ui/panel_slide.gd" id="10_gbbba"]
 
 [sub_resource type="Resource" id="Resource_74kf5"]
 script = ExtResource("2_vfk7f")
@@ -27,6 +28,7 @@ metadata/_custom_type_script = "uid://dl20pr5mfctci"
 
 [sub_resource type="Resource" id="Resource_gbbba"]
 script = ExtResource("5_8cqv5")
+characters_per_sound = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpdgf"]
 bg_color = Color(0, 0, 0, 1)
@@ -36,11 +38,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 20
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_xcn64"]
-script = ExtResource("9_xcn64")
-
-[node name="DialogueRunner" type="MarginContainer" unique_id=2076078586]
-visible = false
+[node name="DialogueRunner" type="Control" unique_id=1486903062]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,14 +48,11 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("8_gbbba")
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 20
 script = ExtResource("1_g2edd")
 dialog_resource = SubResource("Resource_aqd5a")
 typewriter_config = SubResource("Resource_gbbba")
 action_name = "interact"
+close_delay = null
 
 [node name="TypewriterTimer" type="Timer" parent="." unique_id=709107563]
 unique_name_in_owner = true
@@ -69,13 +65,25 @@ stream = ExtResource("6_0m4k1")
 unique_name_in_owner = true
 stream = ExtResource("7_vbtn4")
 
-[node name="Panel" type="Panel" parent="." unique_id=198961716]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=575257130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=198961716]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpdgf")
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1123497901]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=1123497901]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,16 +95,16 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=352250098]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=352250098]
 layout_mode = 2
 
-[node name="SpeakerLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=827014627]
+[node name="SpeakerLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=827014627]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("8_gbbba")
 text = "Speaker"
 
-[node name="TypewriterLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=1231734419]
+[node name="TypewriterLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1231734419]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -104,8 +112,43 @@ size_flags_vertical = 3
 theme = ExtResource("8_gbbba")
 bbcode_enabled = true
 text = "Hello world! meowow"
-custom_effects = [SubResource("RichTextEffect_xcn64")]
 
-[node name="ChoicesContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=768749196]
+[node name="ChoicesContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=768749196]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="CinematicBars" type="Control" parent="." unique_id=2098261705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_xcn64")
+
+[node name="TopBar" type="ColorRect" parent="CinematicBars" unique_id=1496487206]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBar" type="ColorRect" parent="CinematicBars" unique_id=483265959]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="PanelSlide" type="Control" parent="." unique_id=349592016 node_paths=PackedStringArray("panel")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_gbbba")
+panel = NodePath("../MarginContainer")

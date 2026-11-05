@@ -1,0 +1,31 @@
+{
+"format": 1,
+"map_id": "main",
+"locale": "en",
+"entries": {
+"TIMELINE_ALLEY_1": "[shake rate=30 level=10]Birb![/shake][w=0.4] Where are you?![w=0.4] Don't scare me like this...[w=0.6] please make a sound!",
+"TIMELINE_ALLEY_2": "I was so [shake rate=25 level=8]terrified[/shake] back then...[w=0.6] But you searched down this dark alley just to find me.",
+"TIMELINE_ALLEY_3": "Even now...[w=0.7] you must be [shake rate=22 level=7]frantically[/shake] looking for me.....[w=0.8] right?",
+"TIMELINE_ALLEY_4": "The colors..[w=0.6] they have returned...",
+"TIMELINE_BUS_STOP_1": "Another exhausting day...[w=0.6] I just want to rush back home and see my bird.",
+"TIMELINE_BUS_STOP_2": "You always looked so worn out at this bus stop...[w=0.6] That's why I always waited near the door to make you smile.",
+"TIMELINE_BUS_STOP_3": "I..[w=0.5] I need to hurry home...[w=0.6] You must be [shake rate=18 level=5]tired[/shake] and waiting for me.",
+"TIMELINE_CAFE_1": "We used to come here every afternoon.[w=0.5] You enjoyed your coffee,[w=0.3] while I begged for your breadcrumbs.",
+"TIMELINE_CAFE_2": "Your chirping always makes this cafe feel so peaceful,[w=0.4] Birb.",
+"TIMELINE_CAFE_3": "Laughing together at this table...[w=0.7] still feels so warm in my memory.",
+"TIMELINE_HOUSE_1": "I finally made it home...",
+"TIMELINE_HOUSE_2": "It turns out...[w=0.9] that warm smile of yours doesn't belong to me [shake rate=12 level=3]anymore[/shake].",
+"TIMELINE_PARK_1": "Whenever the outside world gets exhausting,[w=0.4] just sitting in the park with you is enough to calm me down.",
+"TIMELINE_PARK_2": "I always felt safe just standing by your side,[w=0.3] too.",
+"TIMELINE_PARK_3": "That warmth...[w=0.8] is slowly bringing color back around me.",
+"TIMELINE_PET_SHOP_1": "This is where we first met.[w=0.6] Your smile back then...[w=0.7] was so warm.",
+"TIMELINE_PET_SHOP_2": "Finally, I have a little companion in this city.[w=0.5] From today on, your name is [shake rate=15 level=4]Birb[/shake]!",
+"TIMELINE_PET_SHOP_2_1": "This is where we first met.[w=0.6] Your smile back then...[w=0.7] was so warm.",
+"TIMELINE_PET_SHOP_2_2": "Finally, I have a little companion in this city.[w=0.5] From today on, your name is [shake rate=15 level=4]Birb[/shake]!",
+"TIMELINE_PET_SHOP_2_3": "Remembering this moment makes this gloomy street feel a bit more colorful...",
+"TIMELINE_PET_SHOP_3": "Remembering this moment makes this gloomy street feel a bit more colorful...",
+"TIMELINE_START_SPAWN_1": "Why is my body lying so still over there...[w=0.7] It's so [shake rate=20 level=6]cold[/shake]...",
+"TIMELINE_START_SPAWN_2": "Why am I on this street?[w=0.6] Someone...[w=0.5] feels like someone is waiting for me back home...",
+"TIMELINE_START_SPAWN_3": "I'm...[w=0.6] slowly [shake rate=25 level=8]forgetting your face[/shake].."
+}
+}

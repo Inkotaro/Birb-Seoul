@@ -36,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_iwan2"]
 [ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_hac6k"]
 [ext_resource type="PackedScene" uid="uid://ddqlk3mpuf8q7" path="res://Assets/kenney_animated-characters-retro/Model/humanoid.tscn" id="35_te172"]
+[ext_resource type="PackedScene" uid="uid://drhgp3ln6hanc" path="res://Scenes/interactable.tscn" id="36_ioigh"]
+[ext_resource type="Script" uid="uid://ddhqaax4l7hv1" path="res://scripts/npc/human-npc.gd" id="36_r0gaj"]
 [ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="36_voq42"]
 
 [sub_resource type="Sky" id="Sky_b755q"]
@@ -353,9 +355,16 @@ shadow_enabled = true
 
 [node name="Humanoid" parent="." unique_id=1572523513 instance=ExtResource("35_te172")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.134216, 0, -2.454484)
+script = ExtResource("36_r0gaj")
+
+[node name="Interactable" parent="Humanoid" unique_id=934048661 instance=ExtResource("36_ioigh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.210402, 0)
+display_name = "Human"
 
 [node name="RoadTheme" type="Node" parent="." unique_id=1459147052]
 script = ExtResource("36_voq42")
 environment = SubResource("Environment_voq42")
 music = ExtResource("11_loxyc")
 music_pitch = 0.5
+
+[connection signal="interacted" from="Humanoid/Interactable" to="Humanoid" method="_on_interactable_interacted"]

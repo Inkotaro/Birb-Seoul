@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_3",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}
