@@ -1,0 +1,332 @@
+[gd_scene format=3 uid="uid://dnfh0qqb1um2q"]
+
+[ext_resource type="PackedScene" uid="uid://wffft4gm6gcs" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_CenterLine_3x3.gltf" id="1_ypxmp"]
+[ext_resource type="PackedScene" uid="uid://pkch8gp68xjo" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3.gltf" id="2_lb8e6"]
+[ext_resource type="PackedScene" uid="uid://dwpseuyaykx51" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_Crosswalk_3x3.gltf" id="3_xohbr"]
+[ext_resource type="PackedScene" uid="uid://bvhdpx5bluumi" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_Corner_3x3.gltf" id="4_shd47"]
+[ext_resource type="PackedScene" uid="uid://bnj0tjdemhv81" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_3x3.gltf" id="5_vqyrt"]
+[ext_resource type="PackedScene" uid="uid://b1153g202kwou" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_Green_3x3.gltf" id="6_wv742"]
+[ext_resource type="PackedScene" uid="uid://b0phm350rdtts" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_3x3.gltf" id="7_5pfqp"]
+[ext_resource type="PackedScene" uid="uid://wxjlkagm0ghw" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Manhole_Cover.gltf" id="8_po01f"]
+[ext_resource type="PackedScene" uid="uid://c26o12ldxfy7g" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Drain_Square.gltf" id="9_4p7bu"]
+[ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="10_tu3b7"]
+[ext_resource type="PackedScene" uid="uid://b88ol4ydcjhew" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3_Patched.gltf" id="11_67f12"]
+[ext_resource type="PackedScene" uid="uid://ckuag41d2ti02" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Pedestrian_Red.gltf" id="12_f2ml0"]
+[ext_resource type="PackedScene" uid="uid://c2n64erbyei64" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Vehicle_Red.gltf" id="13_jtwho"]
+[ext_resource type="PackedScene" uid="uid://c3chu6eo7kbm1" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_AC_Unit_Ground.gltf" id="14_iexi0"]
+[ext_resource type="PackedScene" uid="uid://b1db325pwi0u7" path="res://Assets/SeoulCorner/GLTF/Vehicles/SC_Veh_Scooter_Delivery.gltf" id="15_5pfqp"]
+[ext_resource type="PackedScene" uid="uid://d2kh1vm2wfuje" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Academy_2F.gltf" id="15_ccb1m"]
+[ext_resource type="PackedScene" uid="uid://d4lula54g4t57" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Chicken.gltf" id="16_4jvwc"]
+[ext_resource type="PackedScene" uid="uid://cll7f0ae6eetq" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road.gltf" id="16_tu3b7"]
+[ext_resource type="PackedScene" uid="uid://pd0lgc8evntk" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Hair.gltf" id="17_f7dxm"]
+[ext_resource type="PackedScene" uid="uid://dxhnoo10s2g4q" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Laundry.gltf" id="18_6s2up"]
+[ext_resource type="PackedScene" uid="uid://pum8lyhyuvl1" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Hof.gltf" id="19_pjl60"]
+[ext_resource type="PackedScene" uid="uid://criv7ak1lky85" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Hardware.gltf" id="20_wg5o7"]
+[ext_resource type="PackedScene" uid="uid://ci8dxt6pgpdd7" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Office_2F.gltf" id="21_kb3gs"]
+[ext_resource type="PackedScene" uid="uid://dsibdpg3nrycr" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Trash_Bin_120L.gltf" id="22_otqnw"]
+[ext_resource type="PackedScene" uid="uid://bfeoi54e6to23" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Cable_Drum.gltf" id="23_xi5p5"]
+[ext_resource type="PackedScene" uid="uid://c0itxsl4j7p8b" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_FoodWaste_Bin.gltf" id="24_4gihf"]
+[ext_resource type="PackedScene" uid="uid://pbarxd5f5bh" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Gas_Meter_Bank.gltf" id="25_uj8m7"]
+[ext_resource type="PackedScene" uid="uid://c07jxpf4whf7s" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Wall_Run.gltf" id="26_djkun"]
+[ext_resource type="PackedScene" uid="uid://biu1dvxmhhet4" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Delivery_Rack.gltf" id="28_po01f"]
+[ext_resource type="PackedScene" uid="uid://bfef0x8v5id5t" path="res://Assets/SeoulCorner/GLTF/StoreProducts/SC_Prod_Water_6Pack.gltf" id="29_4p7bu"]
+[ext_resource type="PackedScene" uid="uid://cc6r841so1k1p" path="res://Assets/SeoulCorner/GLTF/StoreTerrace/SC_Ter_Delivery_Boxes.gltf" id="30_tu3b7"]
+[ext_resource type="PackedScene" uid="uid://dubfy8ef78pry" path="res://Assets/SeoulCorner/GLTF/Vehicles/SC_Veh_Van_Delivery.gltf" id="31_67f12"]
+[ext_resource type="PackedScene" uid="uid://c8ovw7fdkw4lc" path="res://Assets/SeoulCorner/GLTF/Vehicles/SC_Veh_Truck_1Ton_Blue.gltf" id="32_f2ml0"]
+[ext_resource type="PackedScene" uid="uid://c3rl5f10vgxif" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Bike_Rack.gltf" id="34_67f12"]
+[ext_resource type="PackedScene" uid="uid://dlmfo6lrw385c" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Trash_Bags_Pile.gltf" id="35_f2ml0"]
+
+[node name="Node3D" type="Node3D" unique_id=1662030085]
+
+[node name="Roads" type="Node3D" parent="." unique_id=1931470114]
+
+[node name="SC_Gnd_Road_CenterLine_3x34" parent="Roads" unique_id=535853733 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x42" parent="Roads" unique_id=2049785630 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x41" parent="Roads" unique_id=2008119110 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x33" parent="Roads" unique_id=1572962513 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x35" parent="Roads" unique_id=1364670990 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x36" parent="Roads" unique_id=399342173 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x38" parent="Roads" unique_id=850758141 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="SC_Gnd_Road_3x38" parent="Roads" unique_id=1329965531 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.320274, -9.536743e-07, -2.9441404)
+
+[node name="SC_Gnd_Road_3x35" parent="Roads" unique_id=1000689294 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="SC_Gnd_Road_Crosswalk_3x35" parent="Roads" unique_id=1028936769 instance=ExtResource("3_xohbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -3)
+
+[node name="SC_Gnd_Road_Crosswalk_3x34" parent="Roads" unique_id=1653163398 instance=ExtResource("3_xohbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x43" parent="Roads" unique_id=648448587 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x40" parent="Roads" unique_id=131726205 instance=ExtResource("1_ypxmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="SC_Gnd_Sidewalk_Corner_3x33" parent="Roads" unique_id=2021879021 instance=ExtResource("4_shd47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -3)
+
+[node name="SC_Gnd_Sidewalk_3x35" parent="Roads" unique_id=622683035 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_Green_3x32" parent="Roads" unique_id=1560033904 instance=ExtResource("6_wv742")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x32" parent="Roads" unique_id=1853833249 instance=ExtResource("7_5pfqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x33" parent="Roads" unique_id=1974371444 instance=ExtResource("7_5pfqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x34" parent="Roads" unique_id=22435877 instance=ExtResource("7_5pfqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x35" parent="Roads" unique_id=657464059 instance=ExtResource("7_5pfqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x36" parent="Roads" unique_id=1288744617 instance=ExtResource("7_5pfqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -3)
+
+[node name="SC_Util_Manhole_Cover2" parent="Roads" unique_id=750145399 instance=ExtResource("8_po01f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="SC_Util_Drain_Square2" parent="Roads" unique_id=629463432 instance=ExtResource("9_4p7bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6037955, -2.3841858e-07, -3.3392038)
+
+[node name="SC_Str_Streetlight_Road_Double2" parent="Roads" unique_id=668543906 instance=ExtResource("10_tu3b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67956, -9.059906e-06, 0.9502411)
+
+[node name="SC_Gnd_Road_3x3_Patched3" parent="Roads" unique_id=479954980 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched8" parent="Roads" unique_id=1654098084 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched10" parent="Roads" unique_id=229982143 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched11" parent="Roads" unique_id=1985892582 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -10)
+
+[node name="SC_Gnd_Road_3x3_Patched9" parent="Roads" unique_id=1175212837 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched12" parent="Roads" unique_id=705894047 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched13" parent="Roads" unique_id=1854495545 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched14" parent="Roads" unique_id=1908600259 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched15" parent="Roads" unique_id=1168136424 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched16" parent="Roads" unique_id=1710014985 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched17" parent="Roads" unique_id=1899322445 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched18" parent="Roads" unique_id=2012130026 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched19" parent="Roads" unique_id=1692737967 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched20" parent="Roads" unique_id=1954711917 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched21" parent="Roads" unique_id=1114117120 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched22" parent="Roads" unique_id=303900160 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched23" parent="Roads" unique_id=1176859871 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched24" parent="Roads" unique_id=101401553 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched25" parent="Roads" unique_id=1058029419 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched26" parent="Roads" unique_id=2136047842 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched27" parent="Roads" unique_id=767571995 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched28" parent="Roads" unique_id=711376080 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched29" parent="Roads" unique_id=1670939066 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
+
+[node name="SC_Gnd_Road_3x3_Patched6" parent="Roads" unique_id=322210876 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -9)
+
+[node name="SC_Gnd_Road_3x3_Patched7" parent="Roads" unique_id=27956650 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8)
+
+[node name="SC_Gnd_Road_3x3_Patched5" parent="Roads" unique_id=161888721 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="SC_Gnd_Road_3x3_Patched4" parent="Roads" unique_id=45872787 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.678447, -1.8119812e-05, -5.9104567)
+
+[node name="SC_Gnd_Road_3x37" parent="Roads" unique_id=1411603495 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -6)
+
+[node name="SC_Gnd_Road_3x36" parent="Roads" unique_id=2121294108 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -6)
+
+[node name="SC_Gnd_Road_3x34" parent="Roads" unique_id=1361551257 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -3)
+
+[node name="SC_Gnd_Road_3x42" parent="Roads" unique_id=1318923599 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -3)
+
+[node name="SC_Gnd_Road_3x3_Patched2" parent="Roads" unique_id=2141314266 instance=ExtResource("11_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.022, -3)
+
+[node name="SC_Gnd_Road_3x33" parent="Roads" unique_id=167481027 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 0)
+
+[node name="SC_Gnd_Road_3x41" parent="Roads" unique_id=1050331031 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
+
+[node name="SC_Gnd_Road_3x32" parent="Roads" unique_id=2128005062 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="SC_Gnd_Road_Crosswalk_3x33" parent="Roads" unique_id=1067003464 instance=ExtResource("3_xohbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -3)
+
+[node name="SC_Gnd_Road_Crosswalk_3x32" parent="Roads" unique_id=1633952908 instance=ExtResource("3_xohbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="SC_Gnd_Sidewalk_3x33" parent="Roads" unique_id=556662418 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3)
+
+[node name="SC_Gnd_Sidewalk_3x34" parent="Roads" unique_id=2074155810 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -3)
+
+[node name="SC_Gnd_Sidewalk_3x37" parent="Roads" unique_id=1585643527 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -6)
+
+[node name="SC_Gnd_Sidewalk_3x38" parent="Roads" unique_id=1273381887 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -9)
+
+[node name="SC_Gnd_Sidewalk_Corner_3x32" parent="Roads" unique_id=1587300352 instance=ExtResource("4_shd47")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 0, -3)
+
+[node name="SC_Gnd_Sidewalk_3x36" parent="Roads" unique_id=694371325 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -6.009)
+
+[node name="SC_Gnd_Sidewalk_3x39" parent="Roads" unique_id=1386401943 instance=ExtResource("5_vqyrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -9.009)
+
+[node name="SC_Gnd_Road_3x40" parent="Roads" unique_id=943262826 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(0.99998415, 0.005391208, -0.0016177659, -0.005391522, 0.99998546, -0.00018981936, 0.0016167193, 0.00019853566, 0.9999987, -22, 0, -3)
+
+[node name="SC_Gnd_Road_3x39" parent="Roads" unique_id=266336396 instance=ExtResource("2_lb8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
+
+[node name="SC_Str_TrafficLight_Pedestrian_Red2" parent="Roads" unique_id=1185966066 instance=ExtResource("12_f2ml0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3876, 0.15182894, -3.5171537)
+
+[node name="SC_Str_TrafficLight_Vehicle_Red2" parent="Roads" unique_id=311093498 instance=ExtResource("13_jtwho")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.811346, 0.17035079, -4.5964565)
+
+[node name="SC_Util_AC_Unit_Ground2" parent="Roads" unique_id=490416803 instance=ExtResource("14_iexi0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.65, 0, -9)
+
+[node name="SC_Veh_Scooter_Delivery2" parent="Roads" unique_id=664537009 instance=ExtResource("15_5pfqp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 0, -4)
+
+[node name="SC_Str_TrafficLight_Pedestrian_Red3" parent="Roads" unique_id=1740363833 instance=ExtResource("12_f2ml0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -4)
+
+[node name="SC_Str_Streetlight_Road2" parent="Roads" unique_id=378146385 instance=ExtResource("16_tu3b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -4)
+
+[node name="SC_Shop_Academy_2F2" parent="." unique_id=1377150268 instance=ExtResource("15_ccb1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -6)
+
+[node name="SC_Shop_Chicken2" parent="." unique_id=822479743 instance=ExtResource("16_4jvwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -6)
+
+[node name="SC_Shop_Hair2" parent="." unique_id=1248569769 instance=ExtResource("17_f7dxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="SC_Shop_Laundry2" parent="." unique_id=653269013 instance=ExtResource("18_6s2up")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="SC_Shop_Hof2" parent="." unique_id=421349955 instance=ExtResource("19_pjl60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
+
+[node name="SC_Shop_Hardware2" parent="." unique_id=252878915 instance=ExtResource("20_wg5o7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 0, -8)
+
+[node name="SC_Shop_Office_2F2" parent="." unique_id=1272422306 instance=ExtResource("21_kb3gs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -11)
+
+[node name="SC_Util_Trash_Bin_120L2" parent="." unique_id=1930521574 instance=ExtResource("22_otqnw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -10)
+
+[node name="SC_Util_Trash_Bin_120L4" parent="." unique_id=1255099567 instance=ExtResource("22_otqnw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, -11)
+
+[node name="SC_Util_Trash_Bin_120L3" parent="." unique_id=994386418 instance=ExtResource("22_otqnw")]
+transform = Transform3D(0.28401533, 0, -0.95881975, 0, 1, 0, 0.95881975, 0, 0.28401533, 8, 0, -9)
+
+[node name="SC_Util_Cable_Drum2" parent="." unique_id=1514996752 instance=ExtResource("23_xi5p5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -12)
+
+[node name="SC_Util_FoodWaste_Bin2" parent="." unique_id=1565004054 instance=ExtResource("24_4gihf")]
+transform = Transform3D(0.5591929, 0, -0.82903755, 0, 1, 0, 0.82903755, 0, 0.5591929, 6, 0, -11)
+
+[node name="SC_Util_Gas_Meter_Bank2" parent="." unique_id=1087791933 instance=ExtResource("25_uj8m7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.485, 1, -10)
+
+[node name="SC_Util_Wire_Wall_Run2" parent="." unique_id=2136964019 instance=ExtResource("26_djkun")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, -8)
+
+[node name="SC_Shop_Delivery_Rack2" parent="." unique_id=906927642 instance=ExtResource("28_po01f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -7)
+
+[node name="SC_Prod_Water_6Pack2" parent="." unique_id=1401288451 instance=ExtResource("29_4p7bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -7)
+
+[node name="SC_Ter_Delivery_Boxes2" parent="." unique_id=894670578 instance=ExtResource("30_tu3b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7)
+
+[node name="SC_Veh_Van_Delivery2" parent="." unique_id=419685731 instance=ExtResource("31_67f12")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, -10)
+
+[node name="SC_Veh_Truck_1Ton_Blue2" parent="." unique_id=2004473708 instance=ExtResource("32_f2ml0")]
+transform = Transform3D(1.295, 0, 0, 0, 1.295, 0, 0, 0, 1.295, 1, 0, -9)
+
+[node name="SC_Str_Bike_Rack2" parent="." unique_id=28977882 instance=ExtResource("34_67f12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54, 0, -4)
+
+[node name="SC_Util_Trash_Bags_Pile2" parent="." unique_id=1428936938 instance=ExtResource("35_f2ml0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
