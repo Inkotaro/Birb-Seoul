@@ -8,4 +8,4 @@ BIRB SEOUL adalah sebuah game 3D sidescrolling narrative exploration yang mengis
 Namun, jika pemain terus berjalan dan tidak berinteraksi dengan objek cutscene di titik checkpoint kenangan tersebut, sistem procedural map tidak akan memicu break looping event. Akibatnya, pemain akan terjebak dalam infinite loop (map kota dan lokasi kecelakaan jasad burung akan terus terulang tanpa akhir) sehingga interaksi dengan objek memori di setiap checkpoint harus dilakukan untuk membuka alur memori berikutnya.
 
 ## Download
-[Release Page](https://github.com/Inkotaro/Birb-Seoul/releases/tag/v2.0.0)
+[Release Page](https://github.com/Inkotaro/Birb-Seoul/releases/tag/v2.0.1)
