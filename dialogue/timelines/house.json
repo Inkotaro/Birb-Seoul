@@ -1,0 +1,16 @@
+{
+	"events": [
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_HOUSE_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_HOUSE_2",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

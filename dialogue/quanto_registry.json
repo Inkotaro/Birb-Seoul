@@ -1,0 +1,18 @@
+{
+"format": 2,
+"source_locale": "en",
+"default_map": "main",
+"maps": {
+"main": "res://dialogue/text/main.{locale}.json"
+},
+"timelines": {
+"alley": "res://dialogue/timelines/alley.json",
+"bus-stop": "res://dialogue/timelines/bus-stop.json",
+"cafe": "res://dialogue/timelines/cafe.json",
+"house": "res://dialogue/timelines/house.json",
+"park": "res://dialogue/timelines/park.json",
+"pet-shop": "res://dialogue/timelines/pet-shop.json",
+"pet-shop-2": "res://dialogue/timelines/pet-shop-2.json",
+"start-spawn": "res://dialogue/timelines/start-spawn.json"
+}
+}

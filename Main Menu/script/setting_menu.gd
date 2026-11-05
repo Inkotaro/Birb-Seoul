@@ -3,13 +3,9 @@ extends Control
 @onready var volume_slider = $MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer/HSlider
 func _ready() -> void:
 	hide()
-	
-
-
 
 func _on_button_pressed() -> void:
 	hide()
-
 
 func _on_h_slider_value_changed(value: float) -> void:
 	var bus_index = AudioServer.get_bus_index("Master")

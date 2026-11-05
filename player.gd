@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var mesh : Node3D = $Mesh 
 @onready var animation_player : AnimationPlayer = $Mesh/AnimationPlayer
@@ -16,6 +17,7 @@ var current_double_jump = 0
 var input_direction : Vector3 = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
 var footstep_cooldown: float = 0
+var input_locked = false
 
 const animations = {
 	"call": ["A_Call_01", "A_Call_02", "A_Call_03"],
@@ -45,18 +47,17 @@ func _player_movement(delta: float) -> void:
 	else:
 		current_double_jump = 0
 
-	if Input.is_action_just_pressed("ui_accept") and current_double_jump <= MAX_DOUBLE_JUMP:
+	if Input.is_action_just_pressed("jump") and current_double_jump <= MAX_DOUBLE_JUMP and not input_locked:
 		velocity.y = JUMP_VELOCITY
 		current_double_jump += 1
 		FlySFX.play_sfx()
 		
-		
-	var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_vector := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	input_direction = (transform.basis * Vector3(input_vector.x, 0, input_vector.y)).normalized()
-	if input_direction:
+	if input_direction and not input_locked:
 		if (not is_on_floor()):
-			velocity.x = input_direction.x * SPEED * 2
-			velocity.z = input_direction.z * SPEED * 2
+			velocity.x = input_direction.x * SPEED * 4
+			velocity.z = input_direction.z * SPEED * 4
 		else:
 			velocity.x = input_direction.x * SPEED 
 			velocity.z = input_direction.z * SPEED
@@ -67,7 +68,7 @@ func _player_movement(delta: float) -> void:
 		
 	# lean movement
 	var target_lean = 0.0
-	if input_direction.length_squared() > 0:
+	if input_direction.length_squared() > 0 and not input_locked:
 		var target_rotation = atan2(input_direction.x, input_direction.z)
 		var angle_diff = wrapf(target_rotation - mesh.rotation.y, -PI, PI)
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, target_rotation, ROTATION_SPEED * delta)

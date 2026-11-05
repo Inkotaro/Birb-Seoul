@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_BUS_STOP_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_BUS_STOP_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_BUS_STOP_3",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

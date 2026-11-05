@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_ALLEY_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_ALLEY_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_ALLEY_3",
+			"type": "line"
+		},
+		{
+			"key": "color_return",
+			"type": "event",
+			"value": "full"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_ALLEY_4",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

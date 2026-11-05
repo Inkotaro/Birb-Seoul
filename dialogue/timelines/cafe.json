@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_CAFE_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_CAFE_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_CAFE_3",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}
