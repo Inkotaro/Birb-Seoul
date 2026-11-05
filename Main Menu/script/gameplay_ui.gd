@@ -28,6 +28,7 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	if main_menu_scene_path != "":
+		get_tree().paused = false
 		get_tree().change_scene_to_file(main_menu_scene_path)
 	else:
 		print("Err : Scene not found!")

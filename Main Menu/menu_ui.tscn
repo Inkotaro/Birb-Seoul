@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7bxc03lgu8n0" path="res://Main Menu/setting_menu.tscn" id="1_uydvx"]
 [ext_resource type="Script" uid="uid://qbng7vk615ie" path="res://Main Menu/script/quit_btn.gd" id="2_p5gyh"]
 [ext_resource type="Script" uid="uid://dyou8qru2dmtr" path="res://Main Menu/script/setting_btn.gd" id="3_uydvx"]
+[ext_resource type="Texture2D" uid="uid://btvyvs3cgtrng" path="res://Main Menu/Birb-Seoul.png" id="6_jdyif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hswg"]
 draw_center = false
@@ -52,7 +53,7 @@ theme_override_constants/separation = 64
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_i2unt")
 theme_override_font_sizes/font_size = 64
-text = "BirdSeoul"
+text = "BirbSeoul"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1274731453]
 layout_mode = 2
@@ -101,6 +102,15 @@ script = ExtResource("2_p5gyh")
 visible = false
 z_index = 1
 layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1309102756]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 41.0
+offset_right = 1100.0
+offset_bottom = 127.0
+texture = ExtResource("6_jdyif")
+expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartBtn" to="MarginContainer/VBoxContainer/VBoxContainer/StartBtn" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/SettingBtn" to="MarginContainer/VBoxContainer/VBoxContainer/SettingBtn" method="_on_pressed"]

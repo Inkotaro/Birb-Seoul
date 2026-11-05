@@ -75,7 +75,7 @@ text = "Back to Menu"
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1869049448]
 layout_mode = 2
 mouse_filter = 2
-color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.7176471)
 
 [node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("1_q2jqy")]
 process_mode = 3
