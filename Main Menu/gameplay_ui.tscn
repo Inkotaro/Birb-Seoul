@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://c3kh8dayi4fnu" path="res://Main Menu/script/gameplay_ui.gd" id="1_7ygwn"]
 [ext_resource type="PackedScene" uid="uid://d4mwk8hbvqp71" path="res://Main Menu/setting_gameplay.tscn" id="1_q2jqy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to6xf"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrtnb"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="GameplayUi" type="Control" unique_id=1448178569]
 layout_mode = 3
 anchors_preset = 15
@@ -53,7 +59,11 @@ process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_to6xf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrtnb")
 text = "Resume"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1504932485]
@@ -61,7 +71,11 @@ process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_to6xf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrtnb")
 text = "Setting"
 
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=879505123]
@@ -69,7 +83,11 @@ process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_to6xf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrtnb")
 text = "Back to Menu"
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1869049448]

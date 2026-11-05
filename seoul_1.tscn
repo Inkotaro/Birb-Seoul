@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_i8fbe"]
 [ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_loxyc"]
 [ext_resource type="PackedScene" uid="uid://dhp2v040nefl1" path="res://Main Menu/gameplay_ui.tscn" id="12_ip4hx"]
+[ext_resource type="FontFile" uid="uid://ymba5haul2jq" path="res://GGBotNet Fonts CC0/Type Light Sans/TrueType (.ttf)/TypeLightSans.ttf" id="13_fxiw3"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
 
@@ -87,7 +88,7 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
 physics_interpolation_mode = 1
-transform = Transform3D(0.99999344, -0.00075567164, 0.0035373396, 0.00029195088, 0.99160546, 0.12930031, -0.003605354, -0.12929843, 0.9915992, 5.866641, 0.52066976, 0.500723)
+transform = Transform3D(0.9999184, 0.005656838, -0.01145152, -0.0039696638, 0.9898117, 0.14232731, 0.01213997, -0.14227024, 0.98975337, 5.791258, 0.43076348, 0.47626287)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]
@@ -147,3 +148,11 @@ autoplay = true
 
 [node name="GameplayUi" parent="CanvasLayer2" unique_id=1448178569 instance=ExtResource("12_ip4hx")]
 visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=1069450926]
+offset_left = 4.0
+offset_top = 624.0
+offset_right = 124.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("13_fxiw3")
+text = "ESC Main Menu"
