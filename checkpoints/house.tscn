@@ -213,3 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.2, -13)
 
 [node name="SC_Ter_Table_Folding2" parent="." unique_id=983758709 instance=ExtResource("29_x8afy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -12)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=611564278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, 4.185, -6.505)
+fov = 60.7

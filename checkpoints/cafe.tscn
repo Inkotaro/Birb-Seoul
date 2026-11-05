@@ -160,3 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
 
 [node name="SC_Shop_Flower_Display2" parent="." unique_id=1714879152 instance=ExtResource("24_vqwd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=309003346]
+transform = Transform3D(0.97437006, 0.046769954, 0.22003533, 0, 0.9781476, -0.2079117, -0.22495104, 0.20258294, 0.95307773, 15.41, 0.215, -0.275)
+fov = 24.5

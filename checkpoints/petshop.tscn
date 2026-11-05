@@ -126,3 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
 
 [node name="SC_Ter_Planter_Box5" parent="." unique_id=943283029 instance=ExtResource("15_r7ujy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -6)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1088592345]
+transform = Transform3D(0.93817675, 0.013589905, -0.34588954, 0, 0.9992291, 0.039259437, 0.34615636, -0.036832295, 0.93745357, 8.724, 1.781, 1.585)
+fov = 19.2

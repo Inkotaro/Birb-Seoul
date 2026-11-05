@@ -108,3 +108,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 
 [node name="SC_Ter_Planter_Box2" parent="." unique_id=1441995138 instance=ExtResource("13_wv2gt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -5)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=11713761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.83, 0.315, -2.96)
+v_offset = 0.99
+fov = 50.4

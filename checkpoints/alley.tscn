@@ -330,3 +330,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54, 0, -4)
 
 [node name="SC_Util_Trash_Bags_Pile2" parent="." unique_id=1428936938 instance=ExtResource("35_f2ml0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1768293445]
+transform = Transform3D(0.9975641, 0.010310662, -0.06899026, 0, 0.9890159, 0.1478094, 0.06975647, -0.14744934, 0.9866067, 6.99, 1.535, -5.955)
+fov = 33.2
