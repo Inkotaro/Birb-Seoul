@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://cnofiqr705uaw"]
 
+[ext_resource type="FontFile" uid="uid://ymba5haul2jq" path="res://GGBotNet Fonts CC0/Type Light Sans/TrueType (.ttf)/TypeLightSans.ttf" id="1_i2unt"]
 [ext_resource type="Script" uid="uid://cs803utm0sw4n" path="res://Main Menu/script/change_scene_btn.gd" id="1_irt24"]
 [ext_resource type="PackedScene" uid="uid://7bxc03lgu8n0" path="res://Main Menu/setting_menu.tscn" id="1_uydvx"]
 [ext_resource type="Script" uid="uid://qbng7vk615ie" path="res://Main Menu/script/quit_btn.gd" id="2_p5gyh"]
 [ext_resource type="Script" uid="uid://dyou8qru2dmtr" path="res://Main Menu/script/setting_btn.gd" id="3_uydvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hswg"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2unt"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bp6p"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2b4n"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmka6"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fqyb"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Ui" type="Control" unique_id=1988345531]
 layout_mode = 3
@@ -27,36 +46,62 @@ theme_override_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=735483235]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 48
+theme_override_constants/separation = 64
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398118157]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_i2unt")
 theme_override_font_sizes/font_size = 64
 text = "BirdSeoul"
 
-[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=303567516]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1274731453]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+
+[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=303567516]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_i2unt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_8hswg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i2unt")
 text = "Start"
 script = ExtResource("1_irt24")
 target_scene_path = "uid://d1um84461uopt"
 
-[node name="SettingBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=755291195]
+[node name="SettingBtn" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=755291195]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_i2unt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4bp6p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w2b4n")
 text = "Setting"
 script = ExtResource("3_uydvx")
 
-[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1617463869]
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1617463869]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_i2unt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_bmka6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0fqyb")
 text = "Quit"
 script = ExtResource("2_p5gyh")
 
 [node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("1_uydvx")]
+visible = false
 z_index = 1
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/SettingBtn" to="MarginContainer/VBoxContainer/SettingBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartBtn" to="MarginContainer/VBoxContainer/VBoxContainer/StartBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/SettingBtn" to="MarginContainer/VBoxContainer/VBoxContainer/SettingBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/QuitBtn" to="MarginContainer/VBoxContainer/VBoxContainer/StartBtn" method="_on_quit_btn_pressed"]

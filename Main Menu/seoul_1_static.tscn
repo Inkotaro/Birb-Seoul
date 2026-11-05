@@ -10,8 +10,6 @@
 [ext_resource type="Script" uid="uid://md71xdhqjg3d" path="res://trigger_new_road.gd" id="10_w1kt1"]
 [ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_4lk57"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6jwua"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ood74"]
 shader = ExtResource("3_rddmw")
 shader_parameter/strength = 0.01
@@ -59,11 +57,6 @@ volumetric_fog_emission = Color(0.1331723, 0.00022166617, 0.25102642, 1)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=154326962]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1843603437]
-shape = SubResource("WorldBoundaryShape3D_6jwua")
-
 [node name="Bird" parent="." unique_id=679907386 instance=ExtResource("1_kp62r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.188132, 0, -1.0009481)
 script = null
@@ -85,7 +78,7 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
 physics_interpolation_mode = 1
-transform = Transform3D(0.9079719, -0.045987666, 0.41649994, -0.0127740055, 0.9904598, 0.1372086, -0.41883636, -0.12990192, 0.89872223, 5.0632734, 0.41371635, 0.47758436)
+transform = Transform3D(0.92275673, -0.021763243, 0.38476795, -0.043381225, 0.9861927, 0.15981857, -0.3829335, -0.16416538, 0.9090718, 4.8680186, 0.201217, 0.37512475)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]

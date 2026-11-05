@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://deovdmklh004p"]
+
+[ext_resource type="PackedScene" uid="uid://wffft4gm6gcs" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_CenterLine_3x3.gltf" id="1_nqtgc"]
+[ext_resource type="PackedScene" uid="uid://bnj0tjdemhv81" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_3x3.gltf" id="5_eyyxm"]
+[ext_resource type="PackedScene" uid="uid://b1153g202kwou" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_Green_3x3.gltf" id="6_1oo5c"]
+[ext_resource type="PackedScene" uid="uid://b0phm350rdtts" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Alley_Concrete_3x3.gltf" id="7_gjubc"]
+[ext_resource type="PackedScene" uid="uid://wxjlkagm0ghw" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Manhole_Cover.gltf" id="8_aobte"]
+[ext_resource type="PackedScene" uid="uid://c26o12ldxfy7g" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Drain_Square.gltf" id="9_jbbvj"]
+[ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="10_auwna"]
+[ext_resource type="PackedScene" uid="uid://cjbp3oqgte0uf" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Building_Name_Plate_Sowon.gltf" id="14_bx5ch"]
+[ext_resource type="PackedScene" uid="uid://b3516jx6es7d1" path="res://Assets/SeoulCorner/GLTF/AlleyHousehold/SC_Home_Kimchi_Container_Stack.gltf" id="15_l0swy"]
+[ext_resource type="PackedScene" uid="uid://bql3jrtvsk3k5" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Wall_Brick_Door_Sliding_3m.gltf" id="16_t57w1"]
+[ext_resource type="PackedScene" uid="uid://capn8ufvlmee7" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Wall_Brick_2m.gltf" id="17_yifca"]
+[ext_resource type="PackedScene" uid="uid://dcfpn0dxmsry7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Mirror_Convex_Double.gltf" id="18_ssw3i"]
+[ext_resource type="PackedScene" uid="uid://dr7xc042gympj" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Telecom_Cabinet.gltf" id="19_l4lww"]
+[ext_resource type="PackedScene" uid="uid://xnhvedc66s5o" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Wall_Riser.gltf" id="20_dl5cg"]
+[ext_resource type="PackedScene" uid="uid://kuspsgc4iix7" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Roof_Railing_3m.gltf" id="21_xgri3"]
+[ext_resource type="PackedScene" uid="uid://c3crjeoraa0pp" path="res://Assets/SeoulCorner/GLTF/VillaModular/SC_Bld_Villa_Roof_Railing_Corner.gltf" id="22_7q4v4"]
+[ext_resource type="PackedScene" uid="uid://bkc0fih3ykan0" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Streetlamp_Wall.gltf" id="25_uuljf"]
+[ext_resource type="PackedScene" uid="uid://dxhnoo10s2g4q" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Laundry.gltf" id="28_wgaic"]
+[ext_resource type="PackedScene" uid="uid://dg7d7cbwhpvhn" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Karaoke.gltf" id="29_ofd36"]
+[ext_resource type="PackedScene" uid="uid://criv7ak1lky85" path="res://Assets/SeoulCorner/GLTF/Shops/SC_Shop_Hardware.gltf" id="30_sxcig"]
+[ext_resource type="PackedScene" uid="uid://ddqlk3mpuf8q7" path="res://Assets/kenney_animated-characters-retro/Model/humanoid.tscn" id="35_jbx44"]
+
+[node name="Map" type="Node3D" unique_id=359042666]
+
+[node name="Roads" type="Node3D" parent="." unique_id=1141586149]
+
+[node name="SC_Gnd_Road_CenterLine_3x34" parent="Roads" unique_id=535853733 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3979998, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x33" parent="Roads" unique_id=1320533971 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.699, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x35" parent="Roads" unique_id=1971740642 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6020002, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x36" parent="Roads" unique_id=1905529199 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6989999, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x38" parent="Roads" unique_id=1936796551 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.301, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x39" parent="Roads" unique_id=331360520 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.398, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x43" parent="Roads" unique_id=2120818227 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.541516, 0, 0)
+
+[node name="SC_Gnd_Road_CenterLine_3x40" parent="Roads" unique_id=619771281 instance=ExtResource("1_nqtgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.698999, 0, 0)
+
+[node name="SC_Gnd_Sidewalk_3x35" parent="Roads" unique_id=622683035 instance=ExtResource("5_eyyxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.494351, -2.3841858e-07, -2.9419384)
+
+[node name="SC_Gnd_Alley_Concrete_Green_3x32" parent="Roads" unique_id=1560033904 instance=ExtResource("6_1oo5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x32" parent="Roads" unique_id=1853833249 instance=ExtResource("7_gjubc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x33" parent="Roads" unique_id=1540497430 instance=ExtResource("7_gjubc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x34" parent="Roads" unique_id=513621510 instance=ExtResource("7_gjubc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x35" parent="Roads" unique_id=19614320 instance=ExtResource("7_gjubc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -3)
+
+[node name="SC_Gnd_Alley_Concrete_3x36" parent="Roads" unique_id=158431933 instance=ExtResource("7_gjubc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -3)
+
+[node name="SC_Util_Manhole_Cover2" parent="Roads" unique_id=750145399 instance=ExtResource("8_aobte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="SC_Util_Drain_Square2" parent="Roads" unique_id=629463432 instance=ExtResource("9_jbbvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6037955, -2.3841858e-07, -3.3392038)
+
+[node name="SC_Str_Streetlight_Road_Double2" parent="Roads" unique_id=668543906 instance=ExtResource("10_auwna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5049386, -9.059906e-06, 0.9502411)
+
+[node name="Building1" type="Node3D" parent="." unique_id=818529442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="SC_Bld_Villa_Building_Name_Plate_Sowon2" parent="Building1" unique_id=1548765399 instance=ExtResource("14_bx5ch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4806131, 2.4602783, -0.013592243)
+
+[node name="SC_Home_Kimchi_Container_Stack2" parent="Building1" unique_id=1228390490 instance=ExtResource("15_l0swy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_Door_Sliding_3m2" parent="Building1" unique_id=132710488 instance=ExtResource("16_t57w1")]
+
+[node name="SC_Bld_Villa_Wall_Brick_2m2" parent="Building1" unique_id=2121737524 instance=ExtResource("17_yifca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="SC_Bld_Villa_Wall_Brick_2m3" parent="Building1" unique_id=477494838 instance=ExtResource("17_yifca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="SC_Util_Mirror_Convex_Double2" parent="Building1" unique_id=1254188420 instance=ExtResource("18_ssw3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="SC_Util_Telecom_Cabinet2" parent="Building1" unique_id=1259245549 instance=ExtResource("19_l4lww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.536, 0, 0.108)
+
+[node name="SC_Util_Wire_Wall_Riser2" parent="Building1" unique_id=354288078 instance=ExtResource("20_dl5cg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.847, 0.6, -0.025)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m4" parent="Building1" unique_id=1868632594 instance=ExtResource("21_xgri3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.499, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_3m3" parent="Building1" unique_id=1376796584 instance=ExtResource("21_xgri3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.992, 2.754, 0)
+
+[node name="SC_Bld_Villa_Roof_Railing_Corner2" parent="Building1" unique_id=1309952458 instance=ExtResource("22_7q4v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9090796, 2.7740734, -0.015325546)
+
+[node name="SC_Util_Streetlamp_Wall2" parent="Building1" unique_id=504958003 instance=ExtResource("25_uuljf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3359957, 1.8715311, -0.007256508)
+
+[node name="Building2" type="Node3D" parent="." unique_id=657277842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.974172, 0, -5)
+
+[node name="SC_Shop_Laundry2" parent="." unique_id=653269013 instance=ExtResource("28_wgaic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.758089, 0, -4)
+
+[node name="SC_Shop_Karaoke2" parent="." unique_id=921087526 instance=ExtResource("29_ofd36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="SC_Shop_Hardware2" parent="." unique_id=252878915 instance=ExtResource("30_sxcig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.117556, 0, -4)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1378337598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.386928, 1.6641934, -4.5624514)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2052175061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.332123, 1.6641934, -4.5624514)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1785506907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5988045, 1.3329482, -5.379402)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="Humanoid" parent="." unique_id=1572523513 instance=ExtResource("35_jbx44")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.134216, 0, -2.454484)

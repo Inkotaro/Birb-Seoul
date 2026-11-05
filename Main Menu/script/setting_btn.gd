@@ -1,5 +1,5 @@
 extends Button
-@onready var setting_menu =$"../../../SettingMenu"
+@onready var setting_menu =$"../../../../SettingMenu"
 
 
 

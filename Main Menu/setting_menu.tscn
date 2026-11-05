@@ -5,6 +5,27 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5h11f"]
 
+[sub_resource type="FontFile" id="FontFile_ffgl6"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+
 [node name="SettingMenu" type="Control" unique_id=1908868373]
 layout_mode = 3
 anchors_preset = 15
@@ -65,15 +86,54 @@ expand_icon = true
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Label2" type="Label" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1287123048]
+[node name="MasterVolume" type="Label" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1287123048]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 24
-text = "Volume"
+text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1133793545]
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1133793545]
+custom_minimum_size = Vector2(350, 0)
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVolume" type="Label" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1301231246]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1771386621]
+custom_minimum_size = Vector2(350, 0)
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXVolume" type="Label" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=1768618857]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontFile_ffgl6")
+theme_override_font_sizes/font_size = 24
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer" unique_id=20503184]
 custom_minimum_size = Vector2(350, 0)
 custom_maximum_size = Vector2(350, -1)
 layout_mode = 2
@@ -91,4 +151,6 @@ mouse_filter = 2
 color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 
 [connection signal="pressed" from="MarginContainer/MarginContainer2/VBoxContainer2/HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer/MasterSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/MarginContainer2/VBoxContainer2/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
