@@ -82,6 +82,7 @@ func clear_queue() -> void:
 	_queue.clear()
 
 
+
 ## Why a queue / play_all() has nothing to play. The usual cause: timelines exist as
 ## files but were never registered (a timeline is registered when it is saved or opened
 ## in the editor, or via Registry > Timelines > Scan folder).

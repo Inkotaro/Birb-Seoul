@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bvhdpx5bluumi" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Sidewalk_Corner_3x3.gltf" id="6_wqu7h"]
 [ext_resource type="PackedScene" uid="uid://ckuag41d2ti02" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Pedestrian_Red.gltf" id="7_f2fsm"]
 [ext_resource type="PackedScene" uid="uid://c2n64erbyei64" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Vehicle_Red.gltf" id="8_fy3y5"]
+[ext_resource type="Script" uid="uid://dmtu03pnsu4ev" path="res://checkpoints/petshop.gd" id="9_w51pq"]
 [ext_resource type="PackedScene" uid="uid://cs1xijxwj1a5l" path="res://Assets/SeoulCorner/GLTF/StoreBuilding/SC_Bld_Store_Prefab_Store_Corner.gltf" id="9_ynprj"]
 [ext_resource type="PackedScene" uid="uid://bgcgbowo7lsd1" path="res://Assets/SeoulCorner/GLTF/StoreFixtures/SC_Fix_BackCounter_Rack.gltf" id="10_w51pq"]
 [ext_resource type="PackedScene" uid="uid://bdoy31ufc5roo" path="res://Assets/SeoulCorner/GLTF/StoreFixtures/SC_Fix_Counter_Checkout.gltf" id="11_julqd"]
@@ -16,8 +17,58 @@
 [ext_resource type="PackedScene" uid="uid://dihx8d272fdjx" path="res://Assets/SeoulCorner/GLTF/StoreFixtures/SC_Fix_Basket_Stack.gltf" id="14_1n6xy"]
 [ext_resource type="PackedScene" uid="uid://dxs4t24ifhxbg" path="res://Assets/SeoulCorner/GLTF/StoreTerrace/SC_Ter_Planter_Box.gltf" id="15_r7ujy"]
 [ext_resource type="PackedScene" uid="uid://badvxey2lafmd" path="res://Assets/SeoulCorner/GLTF/StoreTerrace/SC_Ter_Trash_Bin_Store.gltf" id="16_fus33"]
+[ext_resource type="PackedScene" uid="uid://drhgp3ln6hanc" path="res://Scenes/interactable.tscn" id="16_julqd"]
+[ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="17_7s771"]
+[ext_resource type="PackedScene" uid="uid://li4jak7x0s18" path="res://Scenes/humanoid.tscn" id="17_fy3y5"]
+[ext_resource type="PackedScene" uid="uid://1wrar4iljref" path="res://bird/bird_cutscene.tscn" id="18_ynprj"]
+[ext_resource type="AudioStream" uid="uid://dgu8yd2m2ujsm" path="res://musics/Save.ogg" id="22_ynprj"]
 
-[node name="Node3D" type="Node3D" unique_id=1786963759]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4v4m"]
+size = Vector3(4.8656006, 6.557129, 8.954956)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fy3y5"]
+size = Vector3(72.76465, 13.790039, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynprj"]
+size = Vector3(8.207489, 15.425201, 2.682373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w51pq"]
+size = Vector3(3.8514404, 4.8618164, 2.881012)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_julqd"]
+height = 4.730957
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gx5to"]
+height = 8.405762
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_julqd"]
+size = Vector3(12.057877, 0.6815796, 8.924377)
+
+[sub_resource type="Sky" id="Sky_ynprj"]
+
+[sub_resource type="Environment" id="Environment_f2fsm"]
+background_mode = 2
+sky = SubResource("Sky_ynprj")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+glow_enabled = true
+glow_intensity = 0.4
+glow_mix = 0.24
+glow_bloom = 0.65
+glow_blend_mode = 4
+glow_hdr_threshold = 0.5
+fog_enabled = true
+fog_light_color = Color(0.7140636, 0.8987019, 0.99999994, 1)
+fog_light_energy = 2.12
+fog_sun_scatter = 0.14
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(1, 0.5359005, 0.40145478, 1)
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 274.11
+
+[node name="PetShop" type="Node3D" unique_id=1786963759]
 
 [node name="Roads" type="Node3D" parent="." unique_id=963152571]
 
@@ -93,6 +144,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6124, 0.15182894, -3.517153
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.811346, 0.17035079, -4.5964565)
 
 [node name="Petshop" type="Node3D" parent="." unique_id=1648828485]
+script = ExtResource("9_w51pq")
 
 [node name="SC_Bld_Store_Prefab_Store_Corner2" parent="Petshop" unique_id=611787763 instance=ExtResource("9_ynprj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
@@ -112,6 +164,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -14)
 [node name="SC_Fix_Basket_Stack2" parent="Petshop" unique_id=802122133 instance=ExtResource("14_1n6xy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -8)
 
+[node name="Interactable" parent="Petshop" unique_id=934048661 instance=ExtResource("16_julqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.060261, 2.2693944, -13.016935)
+display_name = "Human"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Petshop/Interactable" unique_id=39307300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.736436, 0.50917006, 3.3858576)
+shape = SubResource("BoxShape3D_e4v4m")
+debug_color = Color(0.988504, 0, 0.30645585, 0.41960785)
+
+[node name="Humanoid" parent="Petshop/Interactable" unique_id=2128736296 instance=ExtResource("17_fy3y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4066067, -2.2693944, 1.4156532)
+
+[node name="HandL" parent="Petshop/Interactable/Humanoid/Root/Skeleton3D" parent_id_path=PackedInt32Array(2128736296, 745930320, 98503201) index="3" unique_id=1882809456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66807175, 2.3471963, 0.7612877)
+visible = false
+
+[node name="HandR" parent="Petshop/Interactable/Humanoid/Root/Skeleton3D" parent_id_path=PackedInt32Array(2128736296, 745930320, 98503201) index="6" unique_id=1978818839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47166824, 2.1629062, 0.9365177)
+
+[node name="BoneAttachment3D" parent="Petshop/Interactable/Humanoid/Root/Skeleton3D" parent_id_path=PackedInt32Array(2128736296, 745930320, 98503201) index="7" unique_id=497505716]
+transform = Transform3D(99.95232, 3.1141417, -0.28842095, -3.112656, 98.15798, -18.849997, -0.30390593, 18.84974, 98.20686, 0.00024139868, 2.698493, 0.008752935)
+
+[node name="HumanCamera" parent="Petshop/Interactable/Humanoid" index="2" unique_id=13603315]
+transform = Transform3D(0.9999982, 0, 0, 0, 0.8943899, -0.44719496, 0, 0.44719496, 0.8943899, 10.469154, 0.74252605, -10.257069)
+
+[node name="Bird" parent="Petshop/Interactable" unique_id=679907386 instance=ExtResource("18_ynprj")]
+transform = Transform3D(0.15606742, 0.75378144, 0.6383234, 0.22879854, -0.65625376, 0.71901476, 0.960882, 0.033832688, -0.2748839, 6.366928, -1.2326648, 1.9362402)
+
 [node name="SC_Ter_Planter_Box2" parent="." unique_id=1441995138 instance=ExtResource("15_r7ujy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
 
@@ -126,3 +206,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
 
 [node name="SC_Ter_Planter_Box5" parent="." unique_id=943283029 instance=ExtResource("15_r7ujy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -6)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1233114981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.194477, 1.6641934, -10.562451)
+light_energy = 5.0
+light_indirect_energy = 9.316
+light_volumetric_fog_energy = 15.0
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1872151596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.038677, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=120215516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, 0)
+shape = SubResource("BoxShape3D_fy3y5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=2010463607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, -5.6985846)
+shape = SubResource("BoxShape3D_fy3y5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=377231865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0512848, 7.2126007, -6.537527)
+shape = SubResource("BoxShape3D_ynprj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1958350694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479431, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_ynprj")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=652358411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.098488, 1.9309082, -4.6342297)
+shape = SubResource("BoxShape3D_w51pq")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" unique_id=1826064120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.481429, 1.7397461, -3.4302323)
+shape = SubResource("CapsuleShape3D_julqd")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D" unique_id=709017927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7052612, 3.2028809, -4.683654)
+shape = SubResource("CapsuleShape3D_gx5to")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D" unique_id=1935582776]
+transform = Transform3D(1, 0, 0, 0, -0.007995444, -0.99996805, 0, 0.99996805, -0.007995444, 2.7052612, 6.57606, -0.9610925)
+shape = SubResource("CapsuleShape3D_gx5to")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D" unique_id=1501134572 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.101654, -0.1592102, -7.463598)
+shape = SubResource("BoxShape3D_julqd")
+
+[node name="RoadTheme" type="Node" parent="." unique_id=1728747313]
+script = ExtResource("17_7s771")
+environment = SubResource("Environment_f2fsm")
+music = ExtResource("22_ynprj")
+music_pitch = 0.5
+
+[connection signal="interacted" from="Petshop/Interactable" to="Petshop" method="_on_interactable_interacted"]
+
+[editable path="Petshop/Interactable/Humanoid"]
+[editable path="Petshop/Interactable/Humanoid/Root"]

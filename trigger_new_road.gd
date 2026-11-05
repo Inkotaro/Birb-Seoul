@@ -26,6 +26,14 @@ const DEFAULT_ROADS := {
 	"seoul_1": "res://roads/seoul_1.tscn",
 	"seoul_2": "res://roads/seoul_2.tscn",
 	"seoul_3": "res://roads/seoul_3.tscn",
+	"seoul_4": "res://roads/seoul_4.tscn",
+	"seoul_5": "res://roads/seoul_5.tscn",
+	"petshop": "res://checkpoints/petshop.tscn",
+	"bus-stop": "res://checkpoints/busstop.tscn",
+	"cafe": "res://checkpoints/cafe.tscn",
+	"park": "res://checkpoints/park.tscn",
+	"house": "res://checkpoints/house.tscn",
+	
 }
 
 

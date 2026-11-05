@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://chy4fv5yojt88"]
+
+[ext_resource type="Texture2D" uid="uid://cpj7c58l7nwns" path="res://Eri.png" id="1_s4le0"]
+[ext_resource type="FontFile" uid="uid://c5j7vi863pe56" path="res://addons/quanto_dialogue/fonts/baksoap.regular.otf" id="2_3hgj1"]
+[ext_resource type="Texture2D" uid="uid://c4qx727nf7o6x" path="res://salmontp2.png" id="3_h4db0"]
+[ext_resource type="Texture2D" uid="uid://c6etneuhepmyl" path="res://62_851-5684-2831_20261105_184229-removebg-preview.png" id="4_s4le0"]
+
+[node name="CreditLogo" type="Control" unique_id=1107075494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1680969410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -159.0
+offset_right = 294.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1497821805]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.3, 0)
+
+[node name="SolomonSalmonPFP" type="TextureRect" parent="HBoxContainer/VBoxContainer2" unique_id=22226285]
+custom_maximum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.1)
+texture = ExtResource("1_s4le0")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2" unique_id=1827563593]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1594072377]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+theme_override_font_sizes/font_size = 36
+text = "Inko"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=678441170]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+text = "#010"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=315520255]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="SolomonSalmonPFP" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1531110413]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.2)
+texture = ExtResource("3_h4db0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=370979948]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_position = Vector2(0, -30)
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=875984894]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+theme_override_font_sizes/font_size = 36
+text = "SolomonSalmon"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1701177878]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+text = "#112"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer" unique_id=1712747484]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(-0.2, 0)
+
+[node name="Foxsye" type="TextureRect" parent="HBoxContainer/VBoxContainer3" unique_id=1373949328]
+custom_maximum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(-0.1, 0.1)
+texture = ExtResource("4_s4le0")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer3" unique_id=1894242608]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_position = Vector2(0, -30)
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer" unique_id=1873255671]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+theme_override_font_sizes/font_size = 36
+text = "Foxsye"
+horizontal_alignment = 1
+
+[node name="Role" type="Label" parent="HBoxContainer/VBoxContainer3/VBoxContainer" unique_id=608083613]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_3hgj1")
+text = "#020"
+horizontal_alignment = 1

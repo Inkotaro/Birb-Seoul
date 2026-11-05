@@ -1,0 +1,20 @@
+{
+	"events": [
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_PET_SHOP_2_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_PET_SHOP_2_2",
+			"type": "line"
+		},
+		{
+			"text_id": "TIMELINE_PET_SHOP_2_3",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

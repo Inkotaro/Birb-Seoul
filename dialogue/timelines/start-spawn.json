@@ -1,0 +1,41 @@
+{
+	"events": [
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "DeadCamera"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_1",
+			"type": "line"
+		},
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "BirdCamera"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_START_SPAWN_3",
+			"type": "line"
+		},
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "default"
+		},
+		{
+			"key": "road",
+			"type": "event",
+			"value": "petshop"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "HumanCamera"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_HOUSE_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_HOUSE_2",
+			"type": "line"
+		},
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "default"
+		},
+		{
+			"key": "road",
+			"type": "event",
+			"value": "seoul_1"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

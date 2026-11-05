@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dhp2v040nefl1"]
 
+[ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="1_7wuh5"]
 [ext_resource type="Script" uid="uid://c3kh8dayi4fnu" path="res://Main Menu/script/gameplay_ui.gd" id="1_7ygwn"]
-[ext_resource type="PackedScene" uid="uid://d4mwk8hbvqp71" path="res://Main Menu/setting_gameplay.tscn" id="1_q2jqy"]
+[ext_resource type="Script" uid="uid://crypxr5oq0k43" path="res://Main Menu/pause_menu_button.gd" id="3_8slu4"]
+[ext_resource type="PackedScene" uid="uid://7bxc03lgu8n0" path="res://Main Menu/setting_menu.tscn" id="4_7wuh5"]
 
 [node name="GameplayUi" type="Control" unique_id=1448178569]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7wuh5")
 script = ExtResource("1_7ygwn")
 main_menu_scene_path = "uid://xssl1qenly68"
 
@@ -31,60 +34,65 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1233375118]
+[node name="Panel" type="PanelContainer" parent="MarginContainer" unique_id=1503589936]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=556300612]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1233375118]
 z_index = 1
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=141027148]
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=141027148]
 layout_mode = 2
 size_flags_horizontal = 4
 offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 0.405)
 theme_override_font_sizes/font_size = 48
 text = "Pause"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=643416331]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=643416331]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=671860598]
+[node name="ResumeButton" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=671860598]
 process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Resume"
+script = ExtResource("3_8slu4")
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1504932485]
+[node name="SettingsButton" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1504932485]
 process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "Setting"
+text = "Settings"
+script = ExtResource("3_8slu4")
+action = 1
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=879505123]
+[node name="BackToMenuButton" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=879505123]
 process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Back to Menu"
+script = ExtResource("3_8slu4")
+action = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1869049448]
-layout_mode = 2
-mouse_filter = 2
-color = Color(0.22745098, 0.22745098, 0.22745098, 1)
-
-[node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("1_q2jqy")]
-process_mode = 3
-visible = false
-z_index = 1
+[node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("4_7wuh5")]
+z_index = 20
 layout_mode = 1
-offset_top = -3.0
-offset_bottom = -3.0
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+offset_left = -1.0
+offset_right = -1.0

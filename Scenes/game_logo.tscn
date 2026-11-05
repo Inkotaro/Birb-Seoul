@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://o3xj4bm5twdb"]
+
+[ext_resource type="Texture2D" uid="uid://bkcn6p746tlja" path="res://Birb-Seoul.png" id="1_yet2w"]
+[ext_resource type="FontFile" uid="uid://c5j7vi863pe56" path="res://addons/quanto_dialogue/fonts/baksoap.regular.otf" id="2_4r1q3"]
+
+[node name="GameLogo" type="Control" unique_id=1178860391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1343793839]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -144.0
+offset_right = 128.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=367584834]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_position = Vector2(0, -30)
+
+[node name="GodotTexture3" type="TextureRect" parent="VBoxContainer/VBoxContainer" unique_id=427265007]
+layout_mode = 2
+texture = ExtResource("1_yet2w")
+
+[node name="Role" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=1059775168]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_4r1q3")
+text = "Birb Seoul"
+horizontal_alignment = 1

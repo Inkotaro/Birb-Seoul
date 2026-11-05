@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bhrlh0u4ytcv7"]
+[gd_scene format=3 uid="uid://c726lnx50dlnq"]
 
 [ext_resource type="PackedScene" uid="uid://wffft4gm6gcs" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_CenterLine_3x3.gltf" id="1_vnu84"]
 [ext_resource type="PackedScene" uid="uid://pkch8gp68xjo" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3.gltf" id="2_b4e22"]
@@ -35,11 +35,32 @@
 [ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_4koir"]
 [ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_4hixt"]
 [ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="35_csyam"]
-[ext_resource type="AudioStream" uid="uid://dgu8yd2m2ujsm" path="res://musics/Save.ogg" id="36_vnu84"]
+[ext_resource type="PackedScene" uid="uid://cvkhxopq1lyj1" path="res://bird/dead_bird.tscn" id="35_wilj1"]
+[ext_resource type="Script" uid="uid://cqu1ckek51ha2" path="res://scripts/dead-bird.gd" id="36_t6rkj"]
+[ext_resource type="PackedScene" uid="uid://drhgp3ln6hanc" path="res://Scenes/interactable.tscn" id="37_d5ni4"]
+[ext_resource type="AudioStream" uid="uid://caysocepreqqe" path="res://musics/BGM_017.ogg" id="39_bmdmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4v4m"]
+size = Vector3(72.76465, 13.790039, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnld3"]
+size = Vector3(8.207489, 15.425201, 2.682373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3dh7"]
+size = Vector3(3.8514404, 4.8618164, 2.881012)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e4v4m"]
+height = 4.730957
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnld3"]
+height = 8.405762
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snr0d"]
+size = Vector3(34.36671, 0.6815796, 8.924377)
 
 [sub_resource type="Sky" id="Sky_6sjw0"]
 
-[sub_resource type="Environment" id="Environment_voq42"]
+[sub_resource type="Environment" id="Environment_5yk6t"]
 background_mode = 2
 sky = SubResource("Sky_6sjw0")
 ambient_light_source = 3
@@ -52,18 +73,17 @@ glow_bloom = 0.65
 glow_blend_mode = 4
 glow_hdr_threshold = 0.5
 fog_enabled = true
-fog_light_color = Color(0.30302414, 0.67491126, 9.62615e-07, 1)
+fog_light_color = Color(0, 0.2401489, 0.33454928, 1)
 fog_light_energy = 2.12
 fog_sun_scatter = 0.14
 volumetric_fog_enabled = true
 volumetric_fog_density = 1.0
-volumetric_fog_albedo = Color(0, 0.8253577, 0.2866062, 1)
+volumetric_fog_albedo = Color(1, 0.5359005, 0.40145478, 1)
 volumetric_fog_emission = Color(0.1331723, 0.00022166617, 0.25102642, 1)
 
-[node name="Map" type="Node3D" unique_id=359042666]
+[node name="Map2" type="Node3D" unique_id=359042666]
 
 [node name="Roads" type="Node3D" parent="." unique_id=1141586149]
-visible = false
 
 [node name="SC_Gnd_Road_CenterLine_3x34" parent="Roads" unique_id=535853733 instance=ExtResource("1_vnu84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3979998, 0, 0)
@@ -351,8 +371,74 @@ light_indirect_energy = 9.316
 light_volumetric_fog_energy = 15.0
 shadow_enabled = true
 
-[node name="RoadTheme" type="Node" parent="." unique_id=1459147052]
+[node name="DeadBird" parent="." unique_id=679907386 instance=ExtResource("35_wilj1")]
+transform = Transform3D(0.489644, -0.03672633, 0.87114865, -0.61033, 0.69909006, 0.3725189, -0.6226927, -0.71408993, 0.31988996, -8.145931, -0.020434797, -1.6579595)
+script = ExtResource("36_t6rkj")
+dialogue_name = "start-spawn-3"
+
+[node name="Interactable" parent="DeadBird" unique_id=2035560335 instance=ExtResource("37_d5ni4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.210402, 0)
+prompt_text = "Inspect"
+display_name = "Dead Birb"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1805398623 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1992186899 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, 0)
+shape = SubResource("BoxShape3D_e4v4m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1291802206 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, -5.6985846)
+shape = SubResource("BoxShape3D_e4v4m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1713573771 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38121033, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1455440613 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479431, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=907562566 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.156699, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=2115072485 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.655312, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=799927920 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.098488, 1.9309082, -4.6342297)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" unique_id=1824671929 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.023038, 1.7397461, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" unique_id=173905513 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.003676, 1.7397461, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D" unique_id=696870059 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.24381, 1.3654785, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D" unique_id=1885815887 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.872229, 3.2028809, -4.683654)
+shape = SubResource("CapsuleShape3D_xnld3")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D" unique_id=727156939 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, -0.007995444, -0.99996805, 0, 0.99996805, -0.007995444, 16.872229, 6.57606, -0.9610925)
+shape = SubResource("CapsuleShape3D_xnld3")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D" unique_id=799586410 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68880653, -0.1592102, -7.463598)
+shape = SubResource("BoxShape3D_snr0d")
+
+[node name="RoadTheme" type="Node" parent="." unique_id=1630964033]
 script = ExtResource("35_csyam")
-environment = SubResource("Environment_voq42")
-music = ExtResource("36_vnu84")
+environment = SubResource("Environment_5yk6t")
+music = ExtResource("39_bmdmc")
 music_pitch = 0.5
+
+[connection signal="interacted" from="DeadBird/Interactable" to="DeadBird" method="_on_interactable_interacted"]

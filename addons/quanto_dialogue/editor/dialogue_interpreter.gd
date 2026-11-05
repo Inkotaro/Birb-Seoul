@@ -10,6 +10,7 @@ extends RefCounted
 ##   runner.finished.connect(func(timeline): ...)
 ##   runner.line_shown.connect(func(speaker, text, text_id): ...)
 ##   runner.choices_shown.connect(func(options): ...)       # Array of resolved strings
+##   runner.error_raised.connect(func(message): ...)        # something went wrong
 ##   runner.start(data, TimelineTextResolver.new(store, data.map_id, data.imports))
 ##   runner.advance()          # player clicked "continue"
 ##   runner.choose_option(1)   # player picked option 1
@@ -21,6 +22,8 @@ signal label_jump(key: String)
 signal label_call(key: String)
 signal started(timeline: String)
 signal finished(timeline: String)
+## A real error (missing label, infinite loop). Also logged with push_error.
+signal error_raised(message: String)
 
 ## Non-blocking events (jump, label, event...) allowed in a row before we assume an
 ## infinite loop such as `jump A` sitting right after `label A`.
@@ -33,6 +36,12 @@ var _waiting := -1                     ## DialogueEvent.Type we are blocked on, 
 var _pending_options: Array[DialogueChoice] = []
 var _resolver: TextResolver = TextResolver.new()
 var _timeline := ""
+
+
+## Logs the error and lets listeners (the runner) show it in the dialog.
+func _error(message: String) -> void:
+	push_error("DialogueInterpreter: " + message)
+	error_raised.emit(message)
 
 
 func start(data: DialogueDataResource, resolver: TextResolver = null) -> void:
@@ -83,7 +92,7 @@ func jump_to_label(label_key: String, run_step := true) -> bool:
 ## Like jump, but a later RETURN comes back to just after the call.
 func call_to_label(label_key: String, run_step := true) -> bool:
 	if not _labels.has(label_key):
-		push_error("DialogueInterpreter: Label key '%s' not found." % label_key)
+		_error("Label key '%s' not found." % label_key)
 		return false
 	_call_stack.append(_snapshot_stack())
 	_enter_label(label_key)
@@ -116,7 +125,7 @@ func _index_labels(events: Array, parents: Array) -> void:
 
 func _enter_label(label_key: String) -> bool:
 	if not _labels.has(label_key):
-		push_error("DialogueInterpreter: Label key '%s' not found." % label_key)
+		_error("Label key '%s' not found." % label_key)
 		return false
 	_waiting = -1
 	_pending_options.clear()
@@ -147,7 +156,7 @@ func _step() -> void:
 	while not _stack.is_empty():
 		guard += 1
 		if guard > MAX_STEPS_PER_YIELD:
-			push_error("DialogueInterpreter: more than %d events without a line or choice (infinite jump loop?). Stopping." % MAX_STEPS_PER_YIELD)
+			_error("more than %d events without a line or choice (infinite jump loop?). Stopping." % MAX_STEPS_PER_YIELD)
 			_stack.clear()
 			break
 

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bpeo76u6tld7u"]
+
+[ext_resource type="Script" uid="uid://bvd2gj25dscyp" path="res://scripts/splash_screen.gd" id="1_6b1b0"]
+[ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="1_i0nmm"]
+[ext_resource type="Texture2D" uid="uid://db3xeqnad0tj5" path="res://logo_small_monochrome_dark.png" id="2_h5jmx"]
+[ext_resource type="PackedScene" uid="uid://o3xj4bm5twdb" path="res://Scenes/game_logo.tscn" id="3_i0nmm"]
+[ext_resource type="PackedScene" uid="uid://xssl1qenly68" path="res://Main Menu/main_menu.tscn" id="4_hnr0x"]
+[ext_resource type="PackedScene" uid="uid://chy4fv5yojt88" path="res://Scenes/credit_logo.tscn" id="5_i0nmm"]
+
+[node name="SplashScreen" type="Control" unique_id=658367626 node_paths=PackedStringArray("studio_logo", "godot_logo", "title_logo", "main_menu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i0nmm")
+script = ExtResource("1_6b1b0")
+studio_logo = NodePath("CanvasLayer/Control/CreditLogo")
+godot_logo = NodePath("CanvasLayer/Control/GodotLogo")
+title_logo = NodePath("CanvasLayer/Control/GameLogo")
+main_menu = NodePath("Canvas/MainMenu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=61732360]
+layer = 99
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1379711765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_i0nmm")
+
+[node name="GameLogo" parent="CanvasLayer/Control" unique_id=1178860391 instance=ExtResource("3_i0nmm")]
+layout_mode = 1
+
+[node name="GodotLogo" type="Control" parent="CanvasLayer/Control" unique_id=88480969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GodotTexture" type="TextureRect" parent="CanvasLayer/Control/GodotLogo" unique_id=1686396627]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -256.0
+offset_right = 150.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h5jmx")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="CreditLogo" parent="CanvasLayer/Control" unique_id=1107075494 instance=ExtResource("5_i0nmm")]
+layout_mode = 1
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=876863016]
+
+[node name="MainMenu" parent="Canvas" unique_id=1859279964 instance=ExtResource("4_hnr0x")]
+z_as_relative = false
+theme = ExtResource("1_i0nmm")

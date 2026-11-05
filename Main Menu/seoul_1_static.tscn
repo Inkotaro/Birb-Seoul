@@ -85,7 +85,7 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=354957797]
 physics_interpolation_mode = 1
-transform = Transform3D(0.90316266, -0.041216657, 0.42731544, -0.009616272, 0.9931884, 0.116122544, -0.42919087, -0.10898672, 0.89661425, 5.1810527, 0.47746378, 0.44135758)
+transform = Transform3D(0.9165389, -0.032531053, 0.39862037, -0.027130976, 0.98933345, 0.14312026, -0.39902425, -0.14199026, 0.9058799, 4.9963937, 0.29281548, 0.4180124)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D" unique_id=659332376]

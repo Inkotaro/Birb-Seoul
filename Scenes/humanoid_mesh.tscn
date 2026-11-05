@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cotphuv33kx60"]
+
+[ext_resource type="PackedScene" uid="uid://d2j73u37nl2ex" path="res://Assets/kenney_animated-characters-retro/Model/characterMedium.fbx" id="1_ef2lx"]
+
+[node name="characterMedium" unique_id=745930320 instance=ExtResource("1_ef2lx")]

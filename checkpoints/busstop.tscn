@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dh3np2jbb6n8e"]
 
+[ext_resource type="Script" uid="uid://bln66j1exi0dh" path="res://checkpoints/busstop.gd" id="1_jyjia"]
 [ext_resource type="PackedScene" uid="uid://wffft4gm6gcs" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_CenterLine_3x3.gltf" id="1_mp26v"]
 [ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="2_jyjia"]
 [ext_resource type="PackedScene" uid="uid://pkch8gp68xjo" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3.gltf" id="3_sete1"]
@@ -13,9 +14,74 @@
 [ext_resource type="PackedScene" uid="uid://sik21p57lhnk" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Trash_Can_Street.gltf" id="11_8lrct"]
 [ext_resource type="PackedScene" uid="uid://cxcap0mjlsg83" path="res://Assets/SeoulCorner/GLTF/Nature/SC_Nat_Bush_Round_S.gltf" id="12_8f0wi"]
 [ext_resource type="PackedScene" uid="uid://dxs4t24ifhxbg" path="res://Assets/SeoulCorner/GLTF/StoreTerrace/SC_Ter_Planter_Box.gltf" id="13_wv2gt"]
+[ext_resource type="PackedScene" uid="uid://drhgp3ln6hanc" path="res://Scenes/interactable.tscn" id="15_rv4yi"]
+[ext_resource type="PackedScene" uid="uid://li4jak7x0s18" path="res://Scenes/humanoid.tscn" id="16_bdnau"]
+[ext_resource type="PackedScene" uid="uid://1wrar4iljref" path="res://bird/bird_cutscene.tscn" id="17_i1ujr"]
+[ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="18_i1ujr"]
+[ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="19_i1ujr"]
 
-[node name="Roads" type="Node3D" unique_id=849552629]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_mp26v"]
+size = Vector3(72.76465, 13.790039, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyjia"]
+size = Vector3(8.207489, 15.425201, 2.682373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sete1"]
+size = Vector3(3.8514404, 4.8618164, 2.881012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4v4m"]
+size = Vector3(0.48336792, 2.4714355, 1.5874634)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lm80v"]
+size = Vector3(0.48336792, 2.4714355, 1.11026)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rv4yi"]
+size = Vector3(5.075592, 3.2122803, 0.5747452)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdnau"]
+size = Vector3(5.075592, 1.960907, 0.5747452)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bdnau"]
+height = 4.730957
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i1ujr"]
+height = 8.405762
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dh4mk"]
+size = Vector3(34.36671, 0.6815796, 8.924377)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnld3"]
+size = Vector3(1, 1.4051514, 0.8027344)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71ed1"]
+size = Vector3(8.1622925, 6.557129, 8.954956)
+
+[sub_resource type="Sky" id="Sky_71ed1"]
+
+[sub_resource type="Environment" id="Environment_e1pbt"]
+background_mode = 2
+sky = SubResource("Sky_71ed1")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+glow_enabled = true
+glow_intensity = 0.4
+glow_mix = 0.24
+glow_bloom = 0.65
+glow_blend_mode = 4
+glow_hdr_threshold = 0.5
+fog_enabled = true
+fog_light_color = Color(0.7140636, 0.8987019, 0.99999994, 1)
+fog_light_energy = 2.12
+fog_sun_scatter = 0.14
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(1, 0.5359005, 0.40145478, 1)
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 274.11
+
+[node name="BusStop" type="Node3D" unique_id=849552629]
+script = ExtResource("1_jyjia")
 
 [node name="SC_Gnd_Road_CenterLine_3x42" parent="." unique_id=535853733 instance=ExtResource("1_mp26v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
@@ -108,3 +174,132 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 
 [node name="SC_Ter_Planter_Box2" parent="." unique_id=1441995138 instance=ExtResource("13_wv2gt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2046097108 groups=["ignore_loop_aabb"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=200741157 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, 0)
+shape = SubResource("BoxShape3D_mp26v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=660730280 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, -5.6985846)
+shape = SubResource("BoxShape3D_mp26v")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1005196897 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38121033, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_jyjia")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=756670880 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479431, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_jyjia")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1026185574 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.156699, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_sete1")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=1152248852 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.655312, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_sete1")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="StaticBody3D" unique_id=1500246491 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.683892, 1.0339966, -6.11144)
+shape = SubResource("BoxShape3D_e4v4m")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="StaticBody3D" unique_id=832407211 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.235928, 1.0339966, -6.350042)
+shape = SubResource("BoxShape3D_lm80v")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=1015168768 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.960036, 1.1061401, -6.405172)
+shape = SubResource("BoxShape3D_rv4yi")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="StaticBody3D" unique_id=803018801 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 0.055614807, -0.9984523, 0, 0.9984523, 0.055614807, 11.960036, 2.4169428, -5.958126)
+shape = SubResource("BoxShape3D_bdnau")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" unique_id=359039829 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.023038, 1.7397461, -3.1974335)
+shape = SubResource("CapsuleShape3D_bdnau")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" unique_id=292097384 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.844787, 1.7397461, -3.871947)
+shape = SubResource("CapsuleShape3D_bdnau")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="StaticBody3D" unique_id=896580586 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.605774, 1.7397461, -3.5051553)
+shape = SubResource("CapsuleShape3D_bdnau")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D" unique_id=1343454343 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.24381, 1.3654785, -3.1974335)
+shape = SubResource("CapsuleShape3D_bdnau")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D" unique_id=389144269 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.872229, 3.2028809, -4.683654)
+shape = SubResource("CapsuleShape3D_i1ujr")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D" unique_id=1890833970 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, -0.007995444, -0.99996805, 0, 0.99996805, -0.007995444, 16.872229, 6.57606, -0.9610925)
+shape = SubResource("CapsuleShape3D_i1ujr")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D" unique_id=521706311 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68880653, -0.1592102, -7.463598)
+shape = SubResource("BoxShape3D_dh4mk")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="StaticBody3D" unique_id=1665518961 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.98978, 0.20257568, -5.115711)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="StaticBody3D" unique_id=2143761431 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9158, 0.20257568, -5.115711)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="Interactable" parent="." unique_id=934048661 instance=ExtResource("15_rv4yi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.313038, 2.2693944, -9.721912)
+display_name = "Human"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" unique_id=1543481710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08809, 0.50917006, 3.3858576)
+shape = SubResource("BoxShape3D_71ed1")
+debug_color = Color(0.988504, 0, 0.30645585, 0.41960785)
+
+[node name="Humanoid" parent="Interactable" unique_id=2128736296 instance=ExtResource("16_bdnau")]
+transform = Transform3D(0.99481976, 0, -0.10165432, 0, 1, 0, 0.10165432, 0, 0.99481976, 6.995022, -2.0567112, 3.4871569)
+
+[node name="Skeleton3D" parent="Interactable/Humanoid/Root" parent_id_path=PackedInt32Array(2128736296, 745930320) index="0" unique_id=98503201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48837638, -0.3916272, -0.15223598)
+
+[node name="Head" parent="Interactable/Humanoid/Root/Skeleton3D" index="2" unique_id=821103772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40902066, 4.3663135, 2.204527)
+
+[node name="HandL" parent="Interactable/Humanoid/Root/Skeleton3D" index="3" unique_id=1882809456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5600469, 1.7515604, 0.011263847)
+visible = false
+
+[node name="LegL" parent="Interactable/Humanoid/Root/Skeleton3D" index="4" unique_id=1516980094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03389311, 0.42674685, 1.4297266)
+
+[node name="LegR" parent="Interactable/Humanoid/Root/Skeleton3D" index="5" unique_id=2111081388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70897007, 0.36856288, 1.2750463)
+
+[node name="HandR" parent="Interactable/Humanoid/Root/Skeleton3D" index="6" unique_id=1978818839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69758415, 2.1629062, 1.1993151)
+
+[node name="BoneAttachment3D" parent="Interactable/Humanoid/Root/Skeleton3D" index="7" unique_id=497505716]
+transform = Transform3D(98.65899, 14.66493, -7.1825705, -14.6289625, 59.8319, -78.77907, -7.255392, 78.77235, 61.174088, 0.00024139868, 2.698493, 0.008752935)
+
+[node name="HumanCamera" parent="Interactable/Humanoid" index="2" unique_id=13603315]
+transform = Transform3D(0.9999982, 0, 0, 0, 0.8943899, -0.44719496, 0, 0.44719496, 0.8943899, 13.041743, 0.49747968, -4.9830856)
+
+[node name="Bird" parent="Interactable" unique_id=679907386 instance=ExtResource("17_i1ujr")]
+transform = Transform3D(0.23799464, 0.40674797, 0.88199484, 0.1416487, -0.91291386, 0.38278472, 0.960882, 0.0338327, -0.2748839, 6.802992, -1.5661516, 3.61418)
+
+[node name="RoadTheme" type="Node" parent="." unique_id=1591229778]
+script = ExtResource("18_i1ujr")
+environment = SubResource("Environment_e1pbt")
+music = ExtResource("19_i1ujr")
+music_pitch = 0.5
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactable/Humanoid"]
+[editable path="Interactable/Humanoid/Root"]

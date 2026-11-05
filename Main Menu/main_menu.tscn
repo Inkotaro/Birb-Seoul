@@ -1,17 +1,23 @@
 [gd_scene format=3 uid="uid://xssl1qenly68"]
 
-[ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://map.tscn" id="1_nb5b5"]
+[ext_resource type="PackedScene" uid="uid://dfsdgypqyloo1" path="res://roads/seoul_1.tscn" id="1_nb5b5"]
 [ext_resource type="PackedScene" uid="uid://cjii7jseyx4sk" path="res://Main Menu/seoul_1_static.tscn" id="2_8ketd"]
 [ext_resource type="Script" uid="uid://wfroaw43q8x1" path="res://Main Menu/script/menu_ui.gd" id="2_15lat"]
 [ext_resource type="PackedScene" uid="uid://cnofiqr705uaw" path="res://Main Menu/menu_ui.tscn" id="3_8ketd"]
+[ext_resource type="PackedScene" uid="uid://chy4fv5yojt88" path="res://Scenes/credit_logo.tscn" id="5_60tkv"]
 
-[node name="MainMenu" type="Node3D" unique_id=1859279964]
+[node name="MainMenu" type="Control" unique_id=1757479340]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=298048181]
-layer = 2
-
-[node name="Ui" parent="CanvasLayer" unique_id=1988345531 instance=ExtResource("3_8ketd")]
-z_index = 1
+[node name="Ui" parent="." unique_id=1988345531 instance=ExtResource("3_8ketd")]
+z_index = 20
+layout_mode = 1
 offset_left = 3.0
 offset_top = 1.0
 offset_right = 3.0
@@ -19,8 +25,39 @@ offset_bottom = 1.0
 script = ExtResource("2_15lat")
 duration = 2.0
 
-[node name="Map" parent="." unique_id=359042666 instance=ExtResource("1_nb5b5")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=555550344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1243860746]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Map" parent="SubViewportContainer/SubViewport" unique_id=359042666 instance=ExtResource("1_nb5b5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343858, 0, 1.5261056)
 
-[node name="Seoul1" parent="." unique_id=513372701 instance=ExtResource("2_8ketd")]
+[node name="Seoul1" parent="SubViewportContainer/SubViewport" unique_id=513372701 instance=ExtResource("2_8ketd")]
 transform = Transform3D(0.9727759, 0, -0.2317479, 0, 1, 0, 0.2317479, 0, 0.9727759, -11.727556, 0.07519734, 0.000415802)
+
+[node name="CreditLogo" parent="." unique_id=1107075494 instance=ExtResource("5_60tkv")]
+z_index = 20
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -339.0
+offset_top = -195.0
+offset_right = -339.0
+offset_bottom = -195.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+offset_transform_position_ratio = Vector2(-0.5, -0.5)
+mouse_filter = 2

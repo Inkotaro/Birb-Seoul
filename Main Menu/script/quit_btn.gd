@@ -1,9 +1,5 @@
-extends Button
+extends DarkButton
+## Example child: a button that quits the game instead of changing scene.
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pressed.connect(_on_quit_btn_pressed)
-
-func _on_quit_btn_pressed() -> void:
+func _on_activated() -> void:
 	get_tree().quit()

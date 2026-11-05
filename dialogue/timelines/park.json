@@ -1,0 +1,41 @@
+{
+	"events": [
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "HumanCamera"
+		},
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_PARK_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_PARK_2",
+			"type": "line"
+		},
+		{
+			"key": "color_return",
+			"type": "event",
+			"value": "half"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_PARK_3",
+			"type": "line"
+		},
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "default"
+		},
+		{
+			"key": "road",
+			"type": "event",
+			"value": "seoul_4"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

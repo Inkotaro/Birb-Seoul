@@ -14,6 +14,13 @@
 [ext_resource type="AudioStream" uid="uid://dy4jr18lwhwa1" path="res://Assets/kenney_impact-sounds/Audio/impactBell_heavy_003.ogg" id="9_v5ial"]
 [ext_resource type="AudioStream" uid="uid://dq2oms5xtanuj" path="res://Assets/kenney_impact-sounds/Audio/impactBell_heavy_004.ogg" id="10_iq6o4"]
 [ext_resource type="AudioStream" uid="uid://bda3biu8ceoml" path="res://Assets/kenney_interface-sounds/Audio/maximize_006.ogg" id="11_vacdo"]
+[ext_resource type="Texture2D" uid="uid://ccxj3cjc8nq6h" path="res://interact.png" id="15_lwxwp"]
+[ext_resource type="Script" uid="uid://rbfgj67oka4o" path="res://scripts/interact-bubble.gd" id="16_ju36o"]
+[ext_resource type="Script" uid="uid://bvxh6wgyhgk0d" path="res://scripts/interaction/interaction_component.gd" id="17_665nn"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="18_2or6p"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_mmgrr"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="20_6lpit"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="21_3fm68"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jwua"]
 radius = 0.08935547
@@ -126,6 +133,35 @@ states/Start/position = Vector2(-16, 37)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bv0mt"), "Idle", "Hop", SubResource("AnimationNodeStateMachineTransition_vacdo"), "Hop", "Idle", SubResource("AnimationNodeStateMachineTransition_t3jd4"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_jwrbr"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_4o1e2"), "Hop", "Fly", SubResource("AnimationNodeStateMachineTransition_np2wq"), "Fly", "Hop", SubResource("AnimationNodeStateMachineTransition_cijty")]
 graph_offset = Vector2(-411.67972, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ju36o"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("15_lwxwp")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 10.0
+emission_operator = 1
+emission_texture = ExtResource("15_lwxwp")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e4v4m"]
+
+[sub_resource type="Resource" id="Resource_8f4el"]
+script = ExtResource("19_mmgrr")
+transition = 7
+
+[sub_resource type="Resource" id="Resource_5gf00"]
+script = ExtResource("20_6lpit")
+fov = 50.0
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[sub_resource type="Resource" id="Resource_hr6ja"]
+script = ExtResource("21_3fm68")
+amplitude = 3.0
+frequency = 0.05
+positional_noise = true
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
+
 [node name="Bird" type="CharacterBody3D" unique_id=679907386]
 script = ExtResource("1_qlr2y")
 
@@ -136,16 +172,16 @@ shape = SubResource("CapsuleShape3D_6jwua")
 [node name="Mesh" parent="." unique_id=1310126432 instance=ExtResource("2_ot1l3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0038352981, 0)
 
-[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 683431602) index="0" unique_id=1666931905]
+[node name="Skeleton3D" parent="Mesh/Armature" parent_id_path=PackedInt32Array(1310126432, 682382268) index="0" unique_id=644025212]
 bones/0/rotation = Quaternion(-2.9802326e-08, 1.1920928e-07, -2.5243543e-29, 1)
-bones/1/position = Vector3(5.8868967e-09, 0.041263536, -0.024691442)
+bones/1/position = Vector3(5.8868967e-09, 0.041532468, -0.024691442)
 bones/1/rotation = Quaternion(-3.5527137e-15, -1.19209275e-07, 1.0097419e-28, 1)
-bones/2/rotation = Quaternion(-0.7746543, -0.031539828, 0.01314344, 0.6314612)
-bones/3/rotation = Quaternion(-0.22319038, 0.0010528067, -0.0012211468, 0.9747735)
+bones/2/rotation = Quaternion(-0.7753851, -0.035127826, 0.014026382, 0.63035494)
+bones/3/rotation = Quaternion(-0.22961873, 0.0011563683, -0.0013412595, 0.97327906)
 bones/4/position = Vector3(0.008247919, 0.036549296, -3.1216324e-10)
-bones/4/rotation = Quaternion(-0.23203242, 0.034669615, -0.042941123, 0.97114116)
+bones/4/rotation = Quaternion(-0.23864397, 0.035314895, -0.04304194, 0.9695099)
 bones/5/position = Vector3(-0.008247918, 0.036549293, -9.583748e-09)
-bones/5/rotation = Quaternion(-0.23198074, -0.03255131, 0.04080861, 0.9713188)
+bones/5/rotation = Quaternion(-0.23845103, -0.033012923, 0.04049977, 0.96974796)
 bones/6/rotation = Quaternion(2.4515793e-07, 0.8960976, 0.4438573, 4.9494616e-07)
 bones/7/rotation = Quaternion(0.2789692, 2.2895341e-07, -2.4165757e-07, 0.9603001)
 bones/8/rotation = Quaternion(0.13322204, 1.18146716e-07, -6.775986e-08, 0.9910863)
@@ -170,22 +206,22 @@ bones/27/rotation = Quaternion(-1.6432338e-08, -1.1807966e-07, -0.7888478, 0.614
 bones/28/position = Vector3(0.020222288, 0.0027966192, 7.315925e-09)
 bones/28/rotation = Quaternion(-3.0193934e-08, -1.182745e-07, -0.8170979, 0.576499)
 bones/29/rotation = Quaternion(0.88625026, 0.21499403, -0.16112694, 0.37732765)
-bones/30/rotation = Quaternion(0.601337, 0.19212154, 0.14681229, 0.7615308)
-bones/31/rotation = Quaternion(-0.56919324, -0.027906235, -0.0036979928, 0.82172173)
-bones/32/rotation = Quaternion(-0.021268869, 0.042419177, 0.045598604, 0.99783224)
+bones/30/rotation = Quaternion(0.59868217, 0.19160819, 0.14747925, 0.7636203)
+bones/31/rotation = Quaternion(-0.5633957, -0.02804144, -0.0036603292, 0.82570314)
+bones/32/rotation = Quaternion(-0.02296397, 0.042585988, 0.04554138, 0.99779016)
 bones/39/rotation = Quaternion(0.88625026, -0.21499403, 0.16112694, 0.37732765)
-bones/40/rotation = Quaternion(0.601337, -0.19212154, -0.14681229, 0.7615308)
-bones/41/rotation = Quaternion(-0.56919324, 0.027906235, 0.003697995, 0.82172173)
-bones/42/rotation = Quaternion(-0.021268861, -0.042419165, -0.045598596, 0.99783224)
+bones/40/rotation = Quaternion(0.59868217, -0.19160822, -0.14747927, 0.76362026)
+bones/41/rotation = Quaternion(-0.5633957, 0.028041437, 0.0036603315, 0.82570314)
+bones/42/rotation = Quaternion(-0.022963965, -0.04258596, -0.04554137, 0.99779016)
 bones/49/rotation = Quaternion(-0.7068286, -0.019830944, 0.019830778, 0.7068288)
 bones/51/rotation = Quaternion(-0.7068286, 0.019830773, -0.019830944, 0.7068288)
 
-[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=1513466814]
+[node name="Robin_Mesh" parent="Mesh/Armature/Skeleton3D" index="0" unique_id=341158177]
 mesh = SubResource("ArrayMesh_iq6o4")
 blend_shapes/Wings_Folded = 1.0
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Armature/Skeleton3D" index="1" unique_id=1522309853]
-transform = Transform3D(-0.95697784, 0.009362846, 0.29000938, 0.10164411, 0.94696563, 0.30483446, -0.27177483, 0.321198, -0.90717673, -7.7634305e-15, 0.13757701, 0.020502798)
+transform = Transform3D(-0.95697784, 0.009362846, 0.29000938, 0.10164411, 0.94696563, 0.30483446, -0.27177483, 0.321198, -0.90717673, -7.7634305e-15, 0.13784593, 0.020502798)
 bone_name = "Head"
 bone_idx = 9
 
@@ -203,12 +239,16 @@ script = ExtResource("6_iq6o4")
 transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1.0000002, 0, 0.9659258, 0, 0.25881907, 0.015, 0.009, -0.005)
 visible = false
 pixel_size = 0.00015
+billboard = 1
+texture_filter = 0
 texture = ExtResource("4_leygl")
 
 [node name="CloseBirb" type="Sprite3D" parent="Mesh/Armature/Skeleton3D/BoneAttachment3D" unique_id=1884486653]
 transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1.0000001, 0, -0.9659258, 0, 0.25881907, -0.015, 0.009, -0.005)
 visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
 pixel_size = 0.00015
+billboard = 1
 texture = ExtResource("4_leygl")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Mesh" unique_id=54066325]
@@ -239,5 +279,40 @@ script = ExtResource("5_rjgom")
 sounds = Array[AudioStream]([ExtResource("11_vacdo"), ExtResource("11_vacdo")])
 min_pitch = 0.5
 max_pitch = 0.7999999999999999
+
+[node name="InteractionBubble" type="Sprite3D" parent="." unique_id=363184148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4085083, 0)
+material_override = SubResource("StandardMaterial3D_ju36o")
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+billboard = 2
+shaded = true
+texture_filter = 0
+texture = ExtResource("15_lwxwp")
+script = ExtResource("16_ju36o")
+
+[node name="InteractionComponent" type="Area3D" parent="." unique_id=1290624095]
+script = ExtResource("17_665nn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent" unique_id=783127945]
+shape = SubResource("SphereShape3D_e4v4m")
+
+[node name="BirdCamera" type="Node3D" parent="." unique_id=1178625797 node_paths=PackedStringArray("follow_target", "look_at_target") groups=["gameplay-camera"]]
+transform = Transform3D(0.99998546, 0, 0, 0, 0.89442056, 0.4472126, 0, -0.4472103, 0.89442515, -0.009579433, 0.7898562, 1.0814855)
+top_level = true
+script = ExtResource("18_2or6p")
+follow_mode = 2
+follow_target = NodePath("../Mesh/Armature/Skeleton3D/BoneAttachment3D/GoofyBirb")
+look_at_mode = 2
+look_at_target = NodePath("../Mesh/Armature/Skeleton3D/BoneAttachment3D/GoofyBirb")
+tween_resource = SubResource("Resource_8f4el")
+camera_3d_resource = SubResource("Resource_5gf00")
+follow_offset = Vector3(0, 0.5, 1)
+follow_damping = true
+follow_damping_value = Vector3(1, 1, 1)
+noise = SubResource("Resource_hr6ja")
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [editable path="Mesh"]

@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://10j0a00tdaxt" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_Streetlight_Road_Double.gltf" id="10_vbtoe"]
 [ext_resource type="PackedScene" uid="uid://dcfpn0dxmsry7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Mirror_Convex_Double.gltf" id="10_y1wlr"]
 [ext_resource type="PackedScene" uid="uid://b88ol4ydcjhew" path="res://Assets/SeoulCorner/GLTF/Ground/SC_Gnd_Road_3x3_Patched.gltf" id="11_e1wd7"]
-[ext_resource type="AudioStream" uid="uid://cxlul3j7ita7s" path="res://musics/BGM_010.ogg" id="11_loxyc"]
 [ext_resource type="PackedScene" uid="uid://dr7xc042gympj" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Telecom_Cabinet.gltf" id="11_n2jt6"]
 [ext_resource type="PackedScene" uid="uid://xnhvedc66s5o" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Wall_Riser.gltf" id="12_h75vw"]
 [ext_resource type="PackedScene" uid="uid://ckuag41d2ti02" path="res://Assets/SeoulCorner/GLTF/Street/SC_Str_TrafficLight_Pedestrian_Red.gltf" id="12_xkcq7"]
@@ -35,14 +34,17 @@
 [ext_resource type="PackedScene" uid="uid://buu28t1edi6e" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Satellite_Dish.gltf" id="32_y0s0d"]
 [ext_resource type="PackedScene" uid="uid://owl1bt0aggj7" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Pole_Transformer.gltf" id="33_iwan2"]
 [ext_resource type="PackedScene" uid="uid://c0rh5xk0d2566" path="res://Assets/SeoulCorner/GLTF/AlleyUtility/SC_Util_Wire_Drop_Building.gltf" id="34_hac6k"]
-[ext_resource type="PackedScene" uid="uid://ddqlk3mpuf8q7" path="res://Assets/kenney_animated-characters-retro/Model/humanoid.tscn" id="35_te172"]
+[ext_resource type="PackedScene" uid="uid://drhgp3ln6hanc" path="res://Scenes/interactable.tscn" id="36_ioigh"]
+[ext_resource type="AudioStream" uid="uid://caysocepreqqe" path="res://musics/BGM_017.ogg" id="36_r0gaj"]
 [ext_resource type="Script" uid="uid://ct1u2n26xpnjv" path="res://scripts/utils/road_theme.gd" id="36_voq42"]
+[ext_resource type="PackedScene" uid="uid://cvkhxopq1lyj1" path="res://bird/dead_bird.tscn" id="40_fyrpr"]
+[ext_resource type="Script" uid="uid://cqu1ckek51ha2" path="res://scripts/dead-bird.gd" id="41_k7u8m"]
 
-[sub_resource type="Sky" id="Sky_b755q"]
+[sub_resource type="Sky" id="Sky_fyrpr"]
 
 [sub_resource type="Environment" id="Environment_voq42"]
 background_mode = 2
-sky = SubResource("Sky_b755q")
+sky = SubResource("Sky_fyrpr")
 ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 4
@@ -60,6 +62,24 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 1.0
 volumetric_fog_albedo = Color(0.68551904, 0.19800708, 4.813075e-07, 1)
 volumetric_fog_emission = Color(0.1331723, 0.00022166617, 0.25102642, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4v4m"]
+size = Vector3(72.76465, 13.790039, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnld3"]
+size = Vector3(8.207489, 15.425201, 2.682373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3dh7"]
+size = Vector3(3.8514404, 4.8618164, 2.881012)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e4v4m"]
+height = 4.730957
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xnld3"]
+height = 8.405762
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snr0d"]
+size = Vector3(34.36671, 0.6815796, 8.924377)
 
 [node name="Map" type="Node3D" unique_id=359042666]
 
@@ -351,11 +371,73 @@ light_indirect_energy = 9.316
 light_volumetric_fog_energy = 15.0
 shadow_enabled = true
 
-[node name="Humanoid" parent="." unique_id=1572523513 instance=ExtResource("35_te172")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.134216, 0, -2.454484)
-
 [node name="RoadTheme" type="Node" parent="." unique_id=1459147052]
 script = ExtResource("36_voq42")
 environment = SubResource("Environment_voq42")
-music = ExtResource("11_loxyc")
+music = ExtResource("36_r0gaj")
 music_pitch = 0.5
+
+[node name="DeadBird" parent="." unique_id=679907386 instance=ExtResource("40_fyrpr")]
+transform = Transform3D(0.489644, -0.03672633, 0.87114865, -0.61033, 0.69909006, 0.3725189, -0.6226927, -0.71408993, 0.31988996, -8.145931, -0.020434797, -1.6579595)
+script = ExtResource("41_k7u8m")
+
+[node name="Interactable" parent="DeadBird" unique_id=2035560335 instance=ExtResource("36_ioigh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.210402, 0)
+prompt_text = "Inspect"
+display_name = "Dead Birb"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1805398623 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1992186899 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, 0)
+shape = SubResource("BoxShape3D_e4v4m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1291802206 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.003174, 6.3950195, -5.6985846)
+shape = SubResource("BoxShape3D_e4v4m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1713573771 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38121033, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1455440613 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479431, 7.2126007, -5.683712)
+shape = SubResource("BoxShape3D_xnld3")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=907562566 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.156699, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=2115072485 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.655312, 1.9309082, -5.186903)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=799927920 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.098488, 1.9309082, -4.6342297)
+shape = SubResource("BoxShape3D_e3dh7")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" unique_id=1824671929 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.023038, 1.7397461, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" unique_id=173905513 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.003676, 1.7397461, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D" unique_id=696870059 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.24381, 1.3654785, -3.1974335)
+shape = SubResource("CapsuleShape3D_e4v4m")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D" unique_id=1885815887 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.872229, 3.2028809, -4.683654)
+shape = SubResource("CapsuleShape3D_xnld3")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D" unique_id=727156939 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, -0.007995444, -0.99996805, 0, 0.99996805, -0.007995444, 16.872229, 6.57606, -0.9610925)
+shape = SubResource("CapsuleShape3D_xnld3")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D" unique_id=799586410 groups=["ignore_loop_aabb", "ignore_loop_visibility"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68880653, -0.1592102, -7.463598)
+shape = SubResource("BoxShape3D_snr0d")
+
+[connection signal="interacted" from="DeadBird/Interactable" to="DeadBird" method="_on_interactable_interacted"]

@@ -1,0 +1,36 @@
+{
+	"events": [
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "HumanCamera"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_CAFE_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Owner",
+			"text_id": "TIMELINE_CAFE_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Birb",
+			"text_id": "TIMELINE_CAFE_3",
+			"type": "line"
+		},
+		{
+			"key": "camera",
+			"type": "event",
+			"value": "default"
+		},
+		{
+			"key": "road",
+			"type": "event",
+			"value": "seoul_3"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

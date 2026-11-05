@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cnofiqr705uaw"]
 
+[ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="1_i2unt"]
 [ext_resource type="Script" uid="uid://cs803utm0sw4n" path="res://Main Menu/script/change_scene_btn.gd" id="1_irt24"]
 [ext_resource type="PackedScene" uid="uid://7bxc03lgu8n0" path="res://Main Menu/setting_menu.tscn" id="1_uydvx"]
+[ext_resource type="FontFile" uid="uid://c5j7vi863pe56" path="res://addons/quanto_dialogue/fonts/baksoap.regular.otf" id="2_jdyif"]
 [ext_resource type="Script" uid="uid://qbng7vk615ie" path="res://Main Menu/script/quit_btn.gd" id="2_p5gyh"]
 [ext_resource type="Script" uid="uid://dyou8qru2dmtr" path="res://Main Menu/script/setting_btn.gd" id="3_uydvx"]
+[ext_resource type="PackedScene" uid="uid://o3xj4bm5twdb" path="res://Scenes/game_logo.tscn" id="6_well6"]
 
 [node name="Ui" type="Control" unique_id=1988345531]
 layout_mode = 3
@@ -12,6 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_i2unt")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1190770652]
 layout_mode = 1
@@ -24,39 +29,91 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=735483235]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=159993880]
 layout_mode = 2
+
+[node name="GameLogo" parent="MarginContainer/HBoxContainer" unique_id=1178860391 instance=ExtResource("6_well6")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=735483235]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_constants/separation = 48
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1398118157]
+[node name="StartBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=303567516]
+z_index = 20
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "BirdSeoul"
-
-[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=303567516]
-layout_mode = 2
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_jdyif")
 theme_override_font_sizes/font_size = 48
 text = "Start"
+alignment = 0
 script = ExtResource("1_irt24")
-target_scene_path = "uid://d1um84461uopt"
 
-[node name="SettingBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=755291195]
+[node name="SettingBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=755291195]
+z_index = 20
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-30, 0)
+theme_override_fonts/font = ExtResource("2_jdyif")
 theme_override_font_sizes/font_size = 48
-text = "Setting"
+text = "Settings"
+alignment = 0
 script = ExtResource("3_uydvx")
 
-[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1617463869]
+[node name="QuitBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1617463869]
+z_index = 20
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-60, 0)
+theme_override_fonts/font = ExtResource("2_jdyif")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+alignment = 0
 script = ExtResource("2_p5gyh")
 
 [node name="SettingMenu" parent="." unique_id=1908868373 instance=ExtResource("1_uydvx")]
-z_index = 1
+unique_name_in_owner = true
+z_index = 20
 layout_mode = 1
+mouse_filter = 2
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/SettingBtn" to="MarginContainer/VBoxContainer/SettingBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="MarginContainer/VBoxContainer/StartBtn" method="_on_quit_btn_pressed"]
+[node name="CinematicBars" type="Control" parent="." unique_id=590398123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopBar" type="ColorRect" parent="CinematicBars" unique_id=669372740]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 79.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBar" type="ColorRect" parent="CinematicBars" unique_id=1223572237]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -79.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartBtn" to="MarginContainer/HBoxContainer/VBoxContainer/StartBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SettingBtn" to="MarginContainer/HBoxContainer/VBoxContainer/SettingBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QuitBtn" to="MarginContainer/HBoxContainer/VBoxContainer/StartBtn" method="_on_quit_btn_pressed"]

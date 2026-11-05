@@ -6,10 +6,20 @@ signal road_changed(new_scene: PackedScene)
 
 enum ThemeTrigger { ON_BREAK, ON_CROSS_BOUNDARY, ON_COMMIT }
 
+## Name suffixes (lowercase) that mark a mesh as a collision helper.
+const COLLISION_SUFFIXES := ["-col", "_col", "-colonly", "_colonly", "-convcol", "-convcolonly"]
+
 @export var player: Node3D
 @export var pcam: PhantomCamera3D
 @export var segment_scene: PackedScene
+## If set, ONLY the mesh with this exact name is measured as the road.
 @export var road_mesh_name := ""
+
+@export_group("Road measuring")
+## Skip meshes that look like collision helpers (hidden, named *collision*, *-col, *_col, ...,
+## or parented under a CollisionShape3D) when measuring the road and building visibility
+## notifiers. Add any mesh to the group "ignore_loop_aabb" to exclude it manually.
+@export var ignore_collision_meshes := true
 
 @export_group("Road switch")
 ## Grows each auto-generated visibility notifier by this much (world units).
@@ -261,11 +271,38 @@ func _check_commit() -> void:
 	_commit_new_road()
 
 
+# ---------- Collision mesh filter ----------
+
+## True for meshes that shouldn't count as road geometry (collision helpers / proxies).
+## Add a mesh to the group "ignore_loop_aabb" to exclude it manually (works even when
+## ignore_collision_meshes is off).
+func _is_collision_mesh(mi: MeshInstance3D) -> bool:
+	if mi.is_in_group("ignore_loop_aabb"):
+		return true
+	if not ignore_collision_meshes:
+		return false
+	if not mi.is_visible_in_tree():
+		return true   # hidden meshes are almost always collision/proxy helpers
+	var n := String(mi.name).to_lower()
+	if n.contains("collision"):
+		return true
+	for suffix in COLLISION_SUFFIXES:
+		if n.ends_with(suffix):
+			return true
+	var p := mi.get_parent()
+	while p:
+		if p is CollisionShape3D or p is CollisionPolygon3D:
+			return true   # a mesh parented to a collision shape (debug/proxy mesh)
+		p = p.get_parent()
+	return false
+
+
 # ---------- On-screen check (real VisibleOnScreenNotifier3D nodes) ----------
 #
 # Best setup: put your own VisibleOnScreenNotifier3D node(s) in the road scene and size their
 # AABB to the part of the road that must be off screen before the swap. If a road scene has
-# none, one is generated per mesh (skipping meshes in group "ignore_loop_visibility").
+# none, one is generated per mesh (skipping meshes in group "ignore_loop_visibility" and
+# collision helper meshes).
 
 func _build_view_notifiers() -> void:
 	_clear_view_notifiers()
@@ -282,7 +319,7 @@ func _build_view_notifiers() -> void:
 				var mi := node as MeshInstance3D
 				if mi.mesh == null or not mi.is_visible_in_tree():
 					continue
-				if mi.is_in_group("ignore_loop_visibility"):
+				if mi.is_in_group("ignore_loop_visibility") or _is_collision_mesh(mi):
 					continue
 				var vn := VisibleOnScreenNotifier3D.new()
 				vn.aabb = mi.get_aabb().grow(view_margin)
@@ -550,17 +587,22 @@ func _get_segment_aabb(root: Node3D, road_only := true) -> AABB:
 	var result := AABB()
 	var first := true
 	var inv := root.global_transform.affine_inverse()
+	var by_name := road_only and road_mesh_name != ""
 	for node in root.find_children("*", "MeshInstance3D", true, false):
-		if road_only and road_mesh_name != "" and node.name != road_mesh_name:
+		if by_name and node.name != road_mesh_name:
 			continue
 		var mi := node as MeshInstance3D
+		# A mesh picked explicitly by road_mesh_name is always measured;
+		# otherwise skip collision helper meshes.
+		if not by_name and _is_collision_mesh(mi):
+			continue
 		var box: AABB = (inv * mi.global_transform) * mi.get_aabb()
 		if first:
 			result = box
 			first = false
 		else:
 			result = result.merge(box)
-	if first and road_only and road_mesh_name != "":
+	if first and by_name:
 		push_warning("RoadManager: no mesh named '%s' in '%s', measuring all meshes instead." % [road_mesh_name, root.name])
 		return _get_segment_aabb(root, false)
 	return result
